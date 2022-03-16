@@ -1,0 +1,38 @@
+/* Key frames */
+@keyframes animation-navigation{
+    0%{top:-80px;}
+    100%{top:0px;}
+}
+@keyframes animation-open{
+    0%{
+        transform: rotate(0deg); 
+        transform-origin:center center;
+    }
+    100%{
+        transform: rotate(180deg); 
+        transform-origin:center center;
+    }
+}
+@keyframes animation-close{
+    0%{
+        transform: rotate(180deg); 
+        transform-origin:center center;
+    }
+    100%{
+        transform: rotate(0deg); 
+        transform-origin:center center;
+    }
+}
+
+/* Scroll Animation */
+.scrollop0{
+    opacity:0;
+    transition:all 0.5s ease;
+}
+.scrollop1{
+    opacity:1;
+    transform:none;
+}
+.fade-up{
+    transform:translate(0,100px);
+}

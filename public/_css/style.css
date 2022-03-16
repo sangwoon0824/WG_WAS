@@ -1,0 +1,549 @@
+@font-face {
+    font-family:'NanumGothic';
+    src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumGothic/NanumGothic.eot');
+    src: 
+    url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumGothic/NanumGothic.eot?#iefix') format("embedded-opentype"), 
+    url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumGothic/NanumGothic.woff') format("woff"), 
+    url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumGothic/NanumGothic.ttf') format("truetype");
+}
+@font-face {
+    font-family:'NanumGothicBold';
+    src: 
+    url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumGothic/NanumGothicBold.otf') format("embedded-opentype"), 
+    url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumGothic/NanumGothicBold.ttf') format("truetype"), 
+    url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumGothic/NanumGothicBold.woff') format("woff");
+}
+@font-face {
+    font-family:'Goyang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Goyang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:'GoyangIlsan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GoyangIlsan.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:'Godo';
+    font-style:normal;
+    font-weight:400;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+  }
+/* 개인 설정 */
+*{
+    margin:0;
+    padding:0;
+    font-family:"NanumGothic", sans-serif;
+}
+body{
+    -ms-user-select:none; 
+    -moz-user-select:-moz-none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;
+}
+ul, li{
+    list-style:none;
+    width:auto;
+}
+.hidden{
+    display:none;
+}
+section{
+    position:relative; /* 자식 요소에 {position:absolute;} 하려면 필수 */
+    width:100%;
+    display:block;
+    overflow:hidden;
+}
+img, svg{
+    vertical-align:middle;
+    border:0;
+}
+.stickers{
+    position:absolute;
+}
+/* 네비게이션 설정 */
+nav{
+    position:absolute;
+    top:0;
+    z-index:99;
+    width:100%;
+    height:80px;
+}
+#nav-left{
+    width:auto;
+    height:55px;
+    position:absolute;
+    top:50%;
+    transform:translate(0,-50%);
+    left:2%;
+    cursor:pointer;
+}
+nav ul{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+nav ul li{
+    float:left;
+    margin:0 20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.white{
+    color:#fff;
+}
+.black{
+    color:#000;
+}
+nav span:hover{
+    color:#aaaaaa;
+}
+#nav-right{
+    position:absolute;
+    top:50%;
+    right:2%;
+    transform:translate(0,-50%);
+}
+.link-icon{
+    width:25px;
+    height:25px;
+    margin:0 7px;
+    cursor:pointer;
+}
+#nav-mobile{
+    position:absolute;
+    top:50%;
+    right:2%;
+    transform:translate(0,-50%);
+    display:none;
+}
+#mobile-menu{
+    position:absolute;
+    width:100%;
+    height:350px;
+    top:80px;
+    background-color:#75a0d0;
+    display:none;
+}
+#mobile-menu ul{
+    width:100%;
+    left:50%;
+    transform:translate(-50%,0);
+    top:40px;
+}
+#mobile-menu ul li:nth-child(3){
+    color:#777;
+    cursor:not-allowed;
+}
+#mobile-menu .mobile-menu-goto{
+    font-family:'NanumGothicBold';
+    width:100%;
+    text-align:center;
+    margin:16px 0;
+    font-size:16pt;
+    font-weight:bold;
+}
+#mobile-menu .mobile-menu-icons{
+    position:relative;
+    bottom:0px;
+    left:50%;
+    transform:translate(-50%,0);
+    margin-top:10px;
+    cursor:default;
+}
+#mobile-menu .mobile-menu-icons svg{
+    width:25px;
+    height:25px;
+    margin:0 10px;
+    cursor:pointer
+}
+/* about 설정 */
+#about{
+    height:auto;
+    background:#a7d0ec;
+    overflow:hidden;
+}
+#background-pc{
+    display:block;
+}
+#background-mobile{
+    display:none;
+}
+.background{
+    width:100%;
+    position:fixed;
+    top:0;
+    background-size:cover;
+}
+.background-image{
+    width:100%;
+}
+.background-object{
+    display:inline;
+    position:absolute;
+    transition:all 0.3s ease-in-out;
+    z-index:2;
+}
+.background-object:hover{
+    transform:scale(1.2);
+}
+#background-object-planet{
+    width:14.739583%;
+    height:auto;
+    top:26.7%;
+    left:10.7%;
+}
+#background-object-moon{
+    width:6.302083%;
+    height:auto;
+    top:17.7%;
+    right:20%;
+}
+#background-object-yellowstar-left{
+    width:2.5%;
+    height:auto;
+    top:10%;
+    left:7%;
+}
+#background-object-yellowstar-right{
+    width:3.90625%;
+    height:auto;
+    top:30%;
+    right:15.5%;
+}
+#background-object-starsign-left{
+    width:4.63541666667%;
+    height:auto;
+    top:17.75%;
+    left:24.75%;
+}
+#background-object-starsign-right{
+    width:10.83%;
+    height:auto;
+    top:5.25%;
+    right:13.25%;
+}
+#about .title{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,0);
+    top:11%;
+    z-index:2;
+    width:38%;
+}
+#about .description{
+    width:100%;
+    position:absolute;
+    top:49%;
+    text-align:center;
+}
+#about .title-text{
+    font-family:'GoyangIlsan';
+    font-size:18pt;
+    color:#000;
+    line-height:42pt;
+}
+#about .title-text-big{
+    font-family:'Goyang';
+    font-size:36pt;
+    font-weight:bold;
+    margin-bottom:1.15em;
+}
+#about .earth-globe{
+    position:relative;
+    margin-top:15%;
+}
+#about .earth-globe img{
+    width:100%;
+    height:auto;
+}
+#mobile-earth-globe{
+    display:none;
+}
+.balloon{
+    display:inline;
+    position:absolute;
+    z-index:0;
+    width:5.72916666667% !important;
+    height:auto !important;
+    transition:all 0.3s ease-in-out;
+}
+.balloon:hover{
+    transform:scale(1.15);
+}
+#balloon-1{
+    top:33%;
+    left:17%;
+}
+#balloon-2{
+    top:62%;
+    left:27%;
+}
+#balloon-3{
+    bottom:16%;
+    left:15%;
+}
+#balloon-4{
+    top:35.5%;
+    right:17.5%;
+}
+#balloon-5{
+    top:63%;
+    right:3%;
+}
+#about #about-sticker-1{
+    left:2%;
+    bottom:7%;
+    width:300px;
+    height:auto;
+}
+#about #about-sticker-2{
+    right:6%;
+    bottom:12%;
+    width:370px;
+    height:auto;
+}
+/* story 설정 */
+#story{
+    height:110vh;
+    background-color:#a7d0ec;
+}
+#story .story-title{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,0);
+    text-align:center;
+    width:25%;
+}
+#story .story-description{
+    position:absolute;
+    width:70%;
+    right:7%;
+    top:31%;
+    text-align:right;
+    color:#000;
+}
+#story .story-text{
+    font-family:'GoyangIlsan';
+    font-size:18pt;
+    line-height:42pt;
+}
+#story .story-text-big{
+    font-family:'Goyang';
+    font-weight:bold;
+    font-size:36pt;
+    margin-bottom:1.6em;
+}
+#story-photo{
+    position:absolute;
+    top:50%;
+    transform:translate(0,-50%);
+    left:13%;
+    width:31%;
+    height:auto;
+}
+#story .link-button{
+    position:absolute;
+    bottom:80px;
+    left:50%;
+    transform:translate(-50%,0);
+    padding:25px 45px;
+    border-radius:40px;
+    background-color:#aaa;
+    border-style:none;
+    cursor:not-allowed;
+    /* 텍스트 설정 */
+    color:#777;
+    font-weight:bold;
+    font-size:12pt;
+}
+/* story, roadmap 브릿지 */
+#connection{
+    width:100%;
+    height:auto;
+}
+#connection img{
+    width:100%;
+    height:auto;
+}
+/* roadmap 설정 */
+#roadmap{
+    height:auto;
+    background-color:#fbf6d1;
+}
+#roadmap .roadmap-title{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,0);
+    width:25%;
+}
+#jar-and-paper{
+    position:relative;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:12%;
+    margin-bottom:12%;
+    width:60%;
+    height:auto;
+}
+#roadmap-sticker-1{
+    left:5%;
+    top:30%;
+    width:90px;
+    height:auto;
+}
+#roadmap-sticker-2{
+    right:7%;
+    top:27%;
+    width:87px;
+    height:auto;
+}
+#roadmap-sticker-3{
+    left:12%;
+    bottom:23%;
+    width:87px;
+    height:auto;
+}
+#roadmap-sticker-4{
+    right:10%;
+    bottom:19%;
+    width:105px;
+    height:auto;
+}
+/*#teammates{
+    background-color:greenyellow;
+}*/
+/* faq 설정 */
+#faq{
+    height:auto;
+    background-color:#fff;
+}
+#faq .faq-title{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,0);
+    top:5%;
+    width:25%;
+}
+.faq-left, .faq-right{
+    position:relative;
+    width:50%;
+    float:left;
+    margin:14% 0;
+}
+.faq-left .box{
+    margin-left:25%;
+}
+.faq-right .box{
+    margin-right:25%;
+}
+.box{
+    cursor:pointer;
+    width:70%;
+    height:auto;
+    margin:30px 0;
+    border:3px solid #000;
+    border-radius:30px;
+    float:left;
+}
+.question > p{
+    font-family:'Godo';
+    font-weight:bold;
+    font-size:15pt;
+    position:relative;
+    padding:20pt 0; 
+    padding-left:20pt;
+    color:#000;
+    outline:none;
+}
+.answer{
+    font-family:'GoyangIlsan';
+    font-size:14pt;
+    line-height:20pt;
+    padding-bottom:20pt; 
+    padding-left:20pt;
+    padding-right:30pt;
+    color:#000;
+    display:block;
+}
+.arrow{
+    width:15pt;
+    height:15pt;
+    float:right;
+    margin-right:3%;
+}
+#faq-sticker-1{
+    left:5%;
+    top:14%;
+    width:150px;
+    height:auto;
+}
+#faq-sticker-2{
+    right:5%;
+    bottom:10%;
+    width:160px;
+    height:auto;
+}
+.open{
+    animation: animation-open 0.5s;
+    transform: rotate(180deg);
+    transform-origin:center center;
+}
+.close{
+    animation: animation-close 0.5s;
+    transform: rotate(0deg);
+    transform-origin:center center;
+}
+/* footer 설정 */
+footer{
+    height:300px;
+    background-color:black;
+    position:relative;
+    overflow:hidden;
+}
+#footer-icons{
+    position:relative;
+    top:10%;
+}
+#footer-icons ul{
+    position:relative;
+    text-align:center;
+    display:table;
+    margin-left:auto;
+    margin-right:auto;
+}
+#footer-icons ul li{
+    float:left;
+    margin:0 25px;
+    cursor:pointer;
+}
+#footer-icons ul li svg{
+    width:40px;
+    height:40px;
+}
+.logo{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    cursor:pointer;
+}
+#links-logo svg{
+    width:170px;
+    height:auto;
+}
+#footer-copyright{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,0);
+    color:white;
+    font-size:15pt;
+    bottom:10%;
+    text-align:center;
+    width:100%;
+}
