@@ -3,7 +3,8 @@ const navigator_story = document.getElementsByClassName("nav_story")[0];
 const mobile_nav_story = document.getElementsByClassName("nav_story")[1];
 const navigator_roadmap = document.getElementsByClassName("nav_roadmap")[0];
 const mobile_nav_roadmap = document.getElementsByClassName("nav_roadmap")[1];
-//const navigator_team = document.getElementById('nav_team');
+const navigator_team = document.getElementsByClassName('nav_team')[0];
+const mobile_nav_team = document.getElementsByClassName('nav_team')[1];
 const navigator_faq = document.getElementsByClassName("nav_faq")[0];
 const mobile_nav_faq = document.getElementsByClassName("nav_faq")[1];
 const navigator_links = document.querySelector(".nav_links");
@@ -55,9 +56,13 @@ mobile_nav_roadmap.addEventListener("click", function(){
   toggle = 0;
 });
 
-/*navigator_team.addEventListener("click", function(){
-  $html.animate({ scrollTop: $("#teammates").offset().top }, 600);
-});*/
+navigator_team.addEventListener("click", function(){
+  $html.animate({ scrollTop: $("#team").offset().top }, speed);
+});
+
+mobile_nav_team.addEventListener("click", function(){
+  $html.animate({ scrollTop: $("#team").offset().top }, speed);
+});
 
 navigator_faq.addEventListener("click", function(){
   $html.animate({ scrollTop: $("#faq").offset().top }, speed);

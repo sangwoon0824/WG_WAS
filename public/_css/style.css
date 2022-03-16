@@ -64,6 +64,19 @@ img, svg{
 .stickers{
     position:absolute;
 }
+a{
+    color:#fff;
+    text-decoration:none;
+}
+/* BRIDGE */
+.bridge{
+    width:100%;
+    height:auto;
+}
+.bridge img{
+    width:100%;
+    height:auto;
+}
 /* 네비게이션 설정 */
 nav{
     position:absolute;
@@ -134,10 +147,6 @@ nav span:hover{
     left:50%;
     transform:translate(-50%,0);
     top:40px;
-}
-#mobile-menu ul li:nth-child(3){
-    color:#777;
-    cursor:not-allowed;
 }
 #mobile-menu .mobile-menu-goto{
     font-family:'NanumGothicBold';
@@ -361,15 +370,6 @@ nav span:hover{
     font-weight:bold;
     font-size:12pt;
 }
-/* story, roadmap 브릿지 */
-#connection{
-    width:100%;
-    height:auto;
-}
-#connection img{
-    width:100%;
-    height:auto;
-}
 /* roadmap 설정 */
 #roadmap{
     height:auto;
@@ -415,9 +415,30 @@ nav span:hover{
     width:105px;
     height:auto;
 }
-/*#teammates{
-    background-color:greenyellow;
-}*/
+.bridge:nth-child(1) img{
+    background:#48ae6c;
+}
+#team{
+    height:auto;
+    background-color:#48ae6c;
+}
+#team .team-title{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,0);
+    top:5%;
+    width:25%;
+}
+#team .team-book{
+    position:relative;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:18%;
+    margin-bottom:18%;
+    width:75%;
+    height:auto;
+}
 /* faq 설정 */
 #faq{
     height:auto;
@@ -542,8 +563,14 @@ footer{
     left:50%;
     transform:translate(-50%,0);
     color:white;
-    font-size:15pt;
+    font-size:14pt;
     bottom:10%;
     text-align:center;
     width:100%;
+}
+#footer-copyright p{
+    padding:2px 0;
+}
+#footer-copyright a:hover{
+    text-decoration: underline;
 }

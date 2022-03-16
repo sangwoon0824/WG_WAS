@@ -56,7 +56,7 @@
             <ul> <!--중앙 네비게이터-->
                 <li class="nav_story"><span class="white">STORY</span></li>
                 <li class="nav_roadmap"><span class="white">ROADMAP</span></li>
-                <!--<li id="nav_team"><span>TEAM</span></li>-->
+                <li class="nav_team"><span class="white">TEAM</span></li>
                 <li class="nav_faq"><span class="white">FAQ</span></li>
                 <li class="nav_links"><span class="white">LINKS</span></li>
             </ul>
@@ -144,7 +144,7 @@
             <ul>
                 <li class="mobile-menu-goto nav_story">STORY</li>
                 <li class="mobile-menu-goto nav_roadmap">ROADMAP</li>
-                <li class="mobile-menu-goto">TEAM</li>
+                <li class="mobile-menu-goto nav_team">TEAM</li>
                 <li class="mobile-menu-goto nav_faq">FAQ</li>
                 <li class="mobile-menu-goto">
                     <div class="mobile-menu-icons">
@@ -297,8 +297,8 @@
         </div>
         <button type="button" class="link-button">Comming Soon</button>
     </section>
-    <section id="connection">
-        <img src="_img/roadmap/bridge_wave.png">
+    <section class="bridge">
+        <img src="_img/bridge/bridge_story.png">
     </section>
     <section id="roadmap">
         <img src="_img/roadmap/title.png" class="roadmap-title">
@@ -310,10 +310,15 @@
         <img src="_img/roadmap/" id="roadmap-sticker-4" class="stickers">
         -->
     </section>
-    <!--
-    <section id="team">
+    <section class="bridge">
+        <img src="_img/bridge/bridge_roadmap.png" style="background:#48ae6c;">
     </section>
-    -->
+    <section id="team">
+        <img src="_img/team/title.png" class="team-title">
+        <div id="team-introduction">
+            <img src="_img/team/book.png" class="team-book">
+        </div>
+    </section>
     <section id="faq">
         <img src="_img/faq/title.png" class="faq-title">
         <div class="faq-area" data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
@@ -490,9 +495,11 @@
                 </g>
                 </svg>
             </a>
-            <span id="footer-copyright">
-                Copyright 2022.WeatherGirls All rights reserved.
-            </span>
+            <div id="footer-copyright">
+            <p>Copyright 2022 WeatherGirls. All rights reserved.</p>
+            <p>Contact: <a href="mailto:WeatherGirls0211@gmail.com">WeatherGirls0211@gmail.com</a></p>
+            </div>
+
     </footer>
 </body>
 <script>AOS.init();</script>
