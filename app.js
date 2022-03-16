@@ -67,7 +67,7 @@ app.all("*", (req, res) => {
   res.send(
     "<script>alert('존재하지 않는 주소입니다.'); window.location = 'http://' + window.location.hostname;</script>"
   );
-  //res.status(404).send("PAGE NOT FOUND");
+  //res.status(404).send("PAGE NOT FOUND")
 });
 
 app.listen(port, (err) => {
