@@ -20,6 +20,9 @@
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "express-rate-limit": "^6.3.0",
-    "user-agents": "^1.0.940"
+    "user-agents": "^1.0.940",
+    "body-parser": "^1.20.0",
+    "caver-js": "^1.8.1",
+    "caver-js-ext-kas": "^1.9.0"
   }
 }
