@@ -8,7 +8,11 @@ const fs = require("fs");
 const Caver = require("caver-js");
 const CONTRACT = require("./build/wgContract.json");
 const { pkey, addr } = require("./dataset/secret.js");
+var util = require("util");
+var encoder = new util.TextEncoder("utf-8");
+
 const bodyParser = require("body-parser");
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
