@@ -1,0 +1,16 @@
+{
+  "tokenID": 21,
+  "name": "WeatherGirls #21",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmdCdJekK3Z2phaZ8veJx9Z4LrNMChfkAzNczbgyP45hYn",
+  "attributes": [
+    { "trait_type": "background", "value": "sunset" },
+    { "trait_type": "body", "value": "tear_dot" },
+    { "trait_type": "hair", "value": "yellow_hair" },
+    { "trait_type": "clothes", "value": "hoodie" },
+    { "trait_type": "mouth", "value": "smile" },
+    { "trait_type": "eye", "value": "normal_eyes" },
+    { "trait_type": "accessories", "value": "cellphone" }
+  ],
+  "date": 1649480607264
+}

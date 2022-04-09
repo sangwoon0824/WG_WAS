@@ -1,0 +1,16 @@
+{
+  "tokenID": 89,
+  "name": "WeatherGirls #89",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmWe93ASMXy1gJJkmdoXcYzmYeogzcgRqBC9o6EATNypUn",
+  "attributes": [
+    { "trait_type": "background", "value": "autumn" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "blue_hair" },
+    { "trait_type": "clothes", "value": "pink_tracksuit" },
+    { "trait_type": "mouth", "value": "kiss" },
+    { "trait_type": "eye", "value": "odd_eye" },
+    { "trait_type": "accessories", "value": "nintendo" }
+  ],
+  "date": 1649480626899
+}

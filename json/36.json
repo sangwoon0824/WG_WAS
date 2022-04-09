@@ -1,0 +1,16 @@
+{
+  "tokenID": 36,
+  "name": "WeatherGirls #36",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmZfzvF9XoXEgZTyVWJAE4cwXjxUEFsEbBWkiGvLfxJ5ab",
+  "attributes": [
+    { "trait_type": "background", "value": "ground" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "purple_hair" },
+    { "trait_type": "clothes", "value": "hoodie" },
+    { "trait_type": "mouth", "value": "normal_mouth" },
+    { "trait_type": "eye", "value": "blue_eyes" },
+    { "trait_type": "accessories", "value": "minifan" }
+  ],
+  "date": 1649480612774
+}

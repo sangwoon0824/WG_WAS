@@ -1,0 +1,16 @@
+{
+  "tokenID": 88,
+  "name": "WeatherGirls #88",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/Qmeb2PXm1NgDY373qvc3jeh1NSoa68hSPfJbeZUrQxjYCE",
+  "attributes": [
+    { "trait_type": "background", "value": "greed_background" },
+    { "trait_type": "body", "value": "white_skin" },
+    { "trait_type": "hair", "value": "purple_hair" },
+    { "trait_type": "clothes", "value": "pink_tracksuit" },
+    { "trait_type": "mouth", "value": "eye_tooth" },
+    { "trait_type": "eye", "value": "shock" },
+    { "trait_type": "accessories", "value": "beer" }
+  ],
+  "date": 1649480626521
+}

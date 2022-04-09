@@ -1,0 +1,16 @@
+{
+  "tokenID": 78,
+  "name": "WeatherGirls #78",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmdEDoetEvrbfqepJeHzrXRJKukL3zFuLgAjTGegsUmBXw",
+  "attributes": [
+    { "trait_type": "background", "value": "red_background" },
+    { "trait_type": "body", "value": "scar" },
+    { "trait_type": "hair", "value": "straight_pink_hair" },
+    { "trait_type": "clothes", "value": "witch_clothes" },
+    { "trait_type": "mouth", "value": "triangle_mouth" },
+    { "trait_type": "eye", "value": "shock" },
+    { "trait_type": "accessories", "value": "minifan" }
+  ],
+  "date": 1649480623431
+}

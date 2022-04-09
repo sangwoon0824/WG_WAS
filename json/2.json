@@ -1,0 +1,16 @@
+{
+  "tokenID": 2,
+  "name": "WeatherGirls #2",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmcM53Dv581yKbhoSEmHDN3Ay9wBQsCqQ17RQsW1X8BuBb",
+  "attributes": [
+    { "trait_type": "background", "value": "cherry_blossoms" },
+    { "trait_type": "body", "value": "shy" },
+    { "trait_type": "hair", "value": "Streamer" },
+    { "trait_type": "clothes", "value": "skyblue_tracksuit" },
+    { "trait_type": "mouth", "value": "smile" },
+    { "trait_type": "eye", "value": "normal_eyes" },
+    { "trait_type": "accessories", "value": "popcorn" }
+  ],
+  "date": 1649480602087
+}

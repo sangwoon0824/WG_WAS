@@ -1,0 +1,16 @@
+{
+  "tokenID": 70,
+  "name": "WeatherGirls #70",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmRReVwtRfouiTqePJZpGx1pdjFxULd7hfuueSLyEsVopq",
+  "attributes": [
+    { "trait_type": "background", "value": "purple_background" },
+    { "trait_type": "body", "value": "freckle" },
+    { "trait_type": "hair", "value": "straight_skyblue_hair" },
+    { "trait_type": "clothes", "value": "red_tracksuit" },
+    { "trait_type": "mouth", "value": "shock_mouth" },
+    { "trait_type": "eye", "value": "odd_eye" },
+    { "trait_type": "accessories", "value": "beer" }
+  ],
+  "date": 1649480621463
+}

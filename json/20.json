@@ -1,0 +1,16 @@
+{
+  "tokenID": 20,
+  "name": "WeatherGirls #20",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmQrj3G26Y37Zjt7qNaWmBbs9V7xP4NxbBLD2wkAee7QVu",
+  "attributes": [
+    { "trait_type": "background", "value": "purple_background" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "straight_purple_hair" },
+    { "trait_type": "clothes", "value": "black_tracksuit" },
+    { "trait_type": "mouth", "value": "smile" },
+    { "trait_type": "eye", "value": "crying_eyes" },
+    { "trait_type": "accessories", "value": "hamburger" }
+  ],
+  "date": 1649480606899
+}

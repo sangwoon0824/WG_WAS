@@ -1,0 +1,16 @@
+{
+  "tokenID": 59,
+  "name": "WeatherGirls #59",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmUrtDYmCGjUrD5AUPanRWp6eBrMNsWro64i7m1WiEqvDV",
+  "attributes": [
+    { "trait_type": "background", "value": "red_background" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "straight_pink_hair" },
+    { "trait_type": "clothes", "value": "witch_clothes" },
+    { "trait_type": "mouth", "value": "eye_tooth" },
+    { "trait_type": "eye", "value": "shock" },
+    { "trait_type": "accessories", "value": "carrot" }
+  ],
+  "date": 1649480618422
+}

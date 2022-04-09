@@ -1,0 +1,16 @@
+{
+  "tokenID": 94,
+  "name": "WeatherGirls #94",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmPAjdZ8GQa3ZqsxQRZHcYPGpCBaaDLyykidpHeR5HpeAt",
+  "attributes": [
+    { "trait_type": "background", "value": "purple_background" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "pigtail" },
+    { "trait_type": "clothes", "value": "black_tracksuit" },
+    { "trait_type": "mouth", "value": "p" },
+    { "trait_type": "eye", "value": "blue_eyes" },
+    { "trait_type": "accessories", "value": "fish" }
+  ],
+  "date": 1649480628256
+}

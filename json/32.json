@@ -1,0 +1,16 @@
+{
+  "tokenID": 32,
+  "name": "WeatherGirls #32",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmTwF2Wt8kQ1PJSbnoVHfZztybZm3S9xRN12DoyHM2fU5P",
+  "attributes": [
+    { "trait_type": "background", "value": "cloudy_weather" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "space_buns" },
+    { "trait_type": "clothes", "value": "overalls" },
+    { "trait_type": "mouth", "value": "bubble_gum" },
+    { "trait_type": "eye", "value": "odd_eye" },
+    { "trait_type": "accessories", "value": "cupnoodle" }
+  ],
+  "date": 1649480611178
+}

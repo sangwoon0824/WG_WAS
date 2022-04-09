@@ -1,0 +1,16 @@
+{
+  "tokenID": 69,
+  "name": "WeatherGirls #69",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmQiZ4uypH3cXPNv1dn8Gx2rvLrQYRwoij1nj8s8A2K5wJ",
+  "attributes": [
+    { "trait_type": "background", "value": "red_background" },
+    { "trait_type": "body", "value": "tear_dot" },
+    { "trait_type": "hair", "value": "angelring" },
+    { "trait_type": "clothes", "value": "maid_dress" },
+    { "trait_type": "mouth", "value": "mask" },
+    { "trait_type": "eye", "value": "crying_eyes" },
+    { "trait_type": "accessories", "value": "nintendo" }
+  ],
+  "date": 1649480621282
+}

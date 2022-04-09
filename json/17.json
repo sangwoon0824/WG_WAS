@@ -1,0 +1,16 @@
+{
+  "tokenID": 17,
+  "name": "WeatherGirls #17",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmP9X7s6dGdhycj7McN8ucQbq7637CX5sWjEihn7dyPa1E",
+  "attributes": [
+    { "trait_type": "background", "value": "greed_background" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "brown_hair" },
+    { "trait_type": "clothes", "value": "overalls" },
+    { "trait_type": "mouth", "value": "smile" },
+    { "trait_type": "eye", "value": "normal_eyes" },
+    { "trait_type": "accessories", "value": "carrot" }
+  ],
+  "date": 1649480605913
+}

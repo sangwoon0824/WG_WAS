@@ -1,0 +1,16 @@
+{
+  "tokenID": 22,
+  "name": "WeatherGirls #22",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmbQWPUxuuHdyQtfBu26uGujN8fEMDeYAkH638Btwf7J2b",
+  "attributes": [
+    { "trait_type": "background", "value": "antarctica" },
+    { "trait_type": "body", "value": "yellow_skin" },
+    { "trait_type": "hair", "value": "nekomimi" },
+    { "trait_type": "clothes", "value": "hoodie" },
+    { "trait_type": "mouth", "value": "mask" },
+    { "trait_type": "eye", "value": "odd_eye" },
+    { "trait_type": "accessories", "value": "carrot" }
+  ],
+  "date": 1649480607723
+}

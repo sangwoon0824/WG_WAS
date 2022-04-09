@@ -1,0 +1,16 @@
+{
+  "tokenID": 75,
+  "name": "WeatherGirls #75",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmNWFoNM3vPmFRjUxQbHW3qxaALHeuZaQe1UTbCSyxeHgQ",
+  "attributes": [
+    { "trait_type": "background", "value": "red_background" },
+    { "trait_type": "body", "value": "yellow_skin" },
+    { "trait_type": "hair", "value": "green_hair" },
+    { "trait_type": "clothes", "value": "royal_uniform" },
+    { "trait_type": "mouth", "value": "kiss" },
+    { "trait_type": "eye", "value": "shock" },
+    { "trait_type": "accessories", "value": "fish" }
+  ],
+  "date": 1649480622858
+}

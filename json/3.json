@@ -1,0 +1,16 @@
+{
+  "tokenID": 3,
+  "name": "WeatherGirls #3",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmVS87GLaMVEbTBpUyCnKoDp4xrNxG9z7P5dLK4EyXq3an",
+  "attributes": [
+    { "trait_type": "background", "value": "blue_background" },
+    { "trait_type": "body", "value": "shy" },
+    { "trait_type": "hair", "value": "red_hair" },
+    { "trait_type": "clothes", "value": "gray_tracksuit" },
+    { "trait_type": "mouth", "value": "triangle_mouth" },
+    { "trait_type": "eye", "value": "shock" },
+    { "trait_type": "accessories", "value": "nintendo" }
+  ],
+  "date": 1649480602270
+}

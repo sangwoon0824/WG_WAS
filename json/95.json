@@ -1,0 +1,16 @@
+{
+  "tokenID": 95,
+  "name": "WeatherGirls #95",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmVJW9WYP8XKXRwcvErz3F7XdhCigPiDnTMn2D84zTZYb7",
+  "attributes": [
+    { "trait_type": "background", "value": "night_view" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "straw_hat" },
+    { "trait_type": "clothes", "value": "white shirt" },
+    { "trait_type": "mouth", "value": "eye_tooth" },
+    { "trait_type": "eye", "value": "shock" },
+    { "trait_type": "accessories", "value": "popcorn" }
+  ],
+  "date": 1649480628576
+}

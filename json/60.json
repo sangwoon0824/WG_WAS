@@ -1,0 +1,16 @@
+{
+  "tokenID": 60,
+  "name": "WeatherGirls #60",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmPg3FCNgSfBiU9juLmaBvWmAEbR2AyAp9c7iDRju8VoHm",
+  "attributes": [
+    { "trait_type": "background", "value": "rain_weather" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "straight_brown_hair" },
+    { "trait_type": "clothes", "value": "witch_clothes" },
+    { "trait_type": "mouth", "value": "kiss" },
+    { "trait_type": "eye", "value": "dizzy" },
+    { "trait_type": "accessories", "value": "carrot" }
+  ],
+  "date": 1649480618876
+}

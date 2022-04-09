@@ -6,6 +6,10 @@ const router = express.Router();
 //const helmet = require("helmet");
 const limit = require("express-rate-limit");
 const ejs = require("ejs");
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "ejs");
@@ -53,6 +57,22 @@ const port = process.env.PORT || 8080;
 
 //동적 폴더(CSS,JS 로딩 용이)
 app.use(express.static(__dirname + "/public"));
+
+app.get("/", (req, res) => {
+  res.render("index.html");
+});
+
+app.get("/metadata/:id", (req, res) => {
+  let id = req.params.id;
+  if (id > 0) {
+    res.send(
+      "<script>alert('발행되지않은 토큰입니다');</script>\n" +
+        "<div>non-existent token ID</div>"
+    );
+  } else {
+    res.sendFile(__dirname + "/json/" + id + ".json");
+  }
+});
 
 app.get("/", (req, res) => {
   res.render("index.html");

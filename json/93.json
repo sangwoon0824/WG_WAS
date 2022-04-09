@@ -1,0 +1,16 @@
+{
+  "tokenID": 93,
+  "name": "WeatherGirls #93",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmPPvCCLMbW473rm6H7ZUNDBUmM1KsPZ3PTxXbSvZy3yzN",
+  "attributes": [
+    { "trait_type": "background", "value": "night_view" },
+    { "trait_type": "body", "value": "white_skin" },
+    { "trait_type": "hair", "value": "straight_brown_hair" },
+    { "trait_type": "clothes", "value": "maid_dress" },
+    { "trait_type": "mouth", "value": "normal_mouth" },
+    { "trait_type": "eye", "value": "lovely_eyes" },
+    { "trait_type": "accessories", "value": "basket" }
+  ],
+  "date": 1649480628075
+}

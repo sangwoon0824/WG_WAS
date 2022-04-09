@@ -1,0 +1,16 @@
+{
+  "tokenID": 80,
+  "name": "WeatherGirls #80",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmfFPb1U7nUNjxNBU78Zssb11BLRPNk5YK6QfRjmNVbcmK",
+  "attributes": [
+    { "trait_type": "background", "value": "sunset" },
+    { "trait_type": "body", "value": "blush" },
+    { "trait_type": "hair", "value": "straight_brown_hair" },
+    { "trait_type": "clothes", "value": "maid_dress" },
+    { "trait_type": "mouth", "value": "triangle_mouth" },
+    { "trait_type": "eye", "value": "red_eyes" },
+    { "trait_type": "accessories", "value": "minifan" }
+  ],
+  "date": 1649480624260
+}

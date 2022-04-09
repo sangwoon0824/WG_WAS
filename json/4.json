@@ -1,0 +1,16 @@
+{
+  "tokenID": 4,
+  "name": "WeatherGirls #4",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmQe6dVzUwdbkVx9kRvDr9ieVXqKXDuJPUgsn5D1Abyp57",
+  "attributes": [
+    { "trait_type": "background", "value": "purple_background" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "angelring" },
+    { "trait_type": "clothes", "value": "overalls" },
+    { "trait_type": "mouth", "value": "bubble_gum" },
+    { "trait_type": "eye", "value": "lovely_eyes" },
+    { "trait_type": "accessories", "value": "book" }
+  ],
+  "date": 1649480602472
+}

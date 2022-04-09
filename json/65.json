@@ -1,0 +1,16 @@
+{
+  "tokenID": 65,
+  "name": "WeatherGirls #65",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmeEJ1gFqrijxZSBJBqpeoiKB67j4DxvMDtcquKUxNfbzj",
+  "attributes": [
+    { "trait_type": "background", "value": "blue_background" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "rabbit_ears" },
+    { "trait_type": "clothes", "value": "overalls" },
+    { "trait_type": "mouth", "value": "bubble_gum" },
+    { "trait_type": "eye", "value": "glasses" },
+    { "trait_type": "accessories", "value": "hamburger" }
+  ],
+  "date": 1649480620039
+}

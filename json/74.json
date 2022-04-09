@@ -1,0 +1,16 @@
+{
+  "tokenID": 74,
+  "name": "WeatherGirls #74",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmcZH7pKgZf7quoUD9by1wuRrSQsouC7MmAwLyCidoSQGT",
+  "attributes": [
+    { "trait_type": "background", "value": "orange_background" },
+    { "trait_type": "body", "value": "shy" },
+    { "trait_type": "hair", "value": "straight_green_hair" },
+    { "trait_type": "clothes", "value": "china" },
+    { "trait_type": "mouth", "value": "triangle_mouth" },
+    { "trait_type": "eye", "value": "red_eyes" },
+    { "trait_type": "accessories", "value": "nintendo" }
+  ],
+  "date": 1649480622627
+}

@@ -1,0 +1,16 @@
+{
+  "tokenID": 64,
+  "name": "WeatherGirls #64",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmVFCdX8dAHKm5ykuvYBB7N7TRhpPFVPYRYJquJYGwjfPG",
+  "attributes": [
+    { "trait_type": "background", "value": "orange_background" },
+    { "trait_type": "body", "value": "tear_dot" },
+    { "trait_type": "hair", "value": "ribbon_ponytail" },
+    { "trait_type": "clothes", "value": "flower_dress" },
+    { "trait_type": "mouth", "value": "hold_breath" },
+    { "trait_type": "eye", "value": "glasses" },
+    { "trait_type": "accessories", "value": "fish" }
+  ],
+  "date": 1649480619860
+}

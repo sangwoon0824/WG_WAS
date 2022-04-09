@@ -1,0 +1,16 @@
+{
+  "tokenID": 66,
+  "name": "WeatherGirls #66",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmP5MsS6YZ4saDLwtYuwuamc5UeEsgXrhLTLjFTvL1QXwb",
+  "attributes": [
+    { "trait_type": "background", "value": "blue_background" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "normal_hair" },
+    { "trait_type": "clothes", "value": "padded_coat" },
+    { "trait_type": "mouth", "value": "binkie" },
+    { "trait_type": "eye", "value": "normal_eyes" },
+    { "trait_type": "accessories", "value": "fish" }
+  ],
+  "date": 1649480620221
+}

@@ -1,0 +1,16 @@
+{
+  "tokenID": 52,
+  "name": "WeatherGirls #52",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmVmn2ya7zzKsmwLB1wD9vMorJN3ZZDHceX5pqZeXqSRAj",
+  "attributes": [
+    { "trait_type": "background", "value": "greed_background" },
+    { "trait_type": "body", "value": "tear_dot" },
+    { "trait_type": "hair", "value": "straw_hat" },
+    { "trait_type": "clothes", "value": "china" },
+    { "trait_type": "mouth", "value": "smile" },
+    { "trait_type": "eye", "value": "blue_eyes" },
+    { "trait_type": "accessories", "value": "angelwing" }
+  ],
+  "date": 1649480616512
+}

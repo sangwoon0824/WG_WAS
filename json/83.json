@@ -1,0 +1,16 @@
+{
+  "tokenID": 83,
+  "name": "WeatherGirls #83",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmScoMP6ZWCwk4qyPdtfi7M2sdieKRFK615KcZhSQRLMhu",
+  "attributes": [
+    { "trait_type": "background", "value": "purple_background" },
+    { "trait_type": "body", "value": "white_skin" },
+    { "trait_type": "hair", "value": "ball_cap" },
+    { "trait_type": "clothes", "value": "flower_dress" },
+    { "trait_type": "mouth", "value": "binkie" },
+    { "trait_type": "eye", "value": "wink" },
+    { "trait_type": "accessories", "value": "minifan" }
+  ],
+  "date": 1649480625057
+}

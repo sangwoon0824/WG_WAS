@@ -1,0 +1,16 @@
+{
+  "tokenID": 92,
+  "name": "WeatherGirls #92",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmVaSsaHXLvGXM2bvxZVVEyWiFuTexLUZWUYetAjGisrFM",
+  "attributes": [
+    { "trait_type": "background", "value": "antarctica" },
+    { "trait_type": "body", "value": "shy" },
+    { "trait_type": "hair", "value": "yellow_hair" },
+    { "trait_type": "clothes", "value": "skyblue_tracksuit" },
+    { "trait_type": "mouth", "value": "eye_tooth" },
+    { "trait_type": "eye", "value": "normal_eyes" },
+    { "trait_type": "accessories", "value": "mug" }
+  ],
+  "date": 1649480627731
+}

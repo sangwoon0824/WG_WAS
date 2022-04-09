@@ -1,0 +1,16 @@
+{
+  "tokenID": 1,
+  "name": "WeatherGirls #1",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmbkiPUPmGKDoKpm8vcwAnHTHRU2dAbqqAozML2pa4wKpD",
+  "attributes": [
+    { "trait_type": "background", "value": "cherry_blossoms" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "straw_hat" },
+    { "trait_type": "clothes", "value": "overalls" },
+    { "trait_type": "mouth", "value": "eye_tooth" },
+    { "trait_type": "eye", "value": "frown" },
+    { "trait_type": "accessories", "value": "fish" }
+  ],
+  "date": 1649480601665
+}

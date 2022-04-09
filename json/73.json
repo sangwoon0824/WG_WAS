@@ -1,0 +1,16 @@
+{
+  "tokenID": 73,
+  "name": "WeatherGirls #73",
+  "description": "Remember to replace this description",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmcVRYcfC84ojjNAEcqkzq7uBg4YdSGbUsnWssFVwv1Z6z",
+  "attributes": [
+    { "trait_type": "background", "value": "autumn" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "yellow_hair" },
+    { "trait_type": "clothes", "value": "witch_clothes" },
+    { "trait_type": "mouth", "value": "normal_mouth" },
+    { "trait_type": "eye", "value": "3D_glasses" },
+    { "trait_type": "accessories", "value": "mug" }
+  ],
+  "date": 1649480622444
+}
