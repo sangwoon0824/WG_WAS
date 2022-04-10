@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", async function (event) {
 });
 
 async function cntBlockNumber() {
-  blockNumber = await caver.klay.getBlockNumber();
   if (!blockCnt) {
     setInterval(async function () {
       blockNumber += 1;
@@ -172,7 +171,7 @@ async function check_status() {
   document.getElementById("currentblock").innerHTML =
     "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
     */
-
+  blockNumber = await caver.klay.getBlockNumber();
   cntBlockNumber();
 }
 
