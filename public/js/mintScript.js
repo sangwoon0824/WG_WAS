@@ -68,17 +68,6 @@ async function isSpecial() {
 
 function cntBlockNumber() {
   if (!blockCnt) {
-    setInterval(function () {
-      blockNumber += 1;
-      document.getElementById("currentblock").innerHTML =
-        "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
-    }, 1000);
-    blockCnt = true;
-  }
-}
-
-function cntBlockNumber() {
-  if (!blockCnt) {
     setInterval(async function () {
       blockNumber += 1;
       document.getElementById("currentblock").innerHTML =
