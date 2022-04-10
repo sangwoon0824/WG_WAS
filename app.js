@@ -106,7 +106,7 @@ app.post("/checkwhitelist", (req, res) => {
   res.send({ result: result });
 });
 
-app.post("/checkspecial", (req, res) => {
+app.post("/checkspecial", async (req, res) => {
   var address = req.body.data;
   let boolSP = false;
   let article = fs.readFileSync(__dirname + "/dataset/special.txt");
@@ -118,7 +118,6 @@ app.post("/checkspecial", (req, res) => {
     console.log(String(dataST).toUpperCase() == address.toUpperCase());
     if (String(dataST).toUpperCase() == address.toUpperCase()) {
       boolSP == true;
-      res.send({ result: String(boolSP) });
     }
   }
   res.send({ result: String(boolSP) });
