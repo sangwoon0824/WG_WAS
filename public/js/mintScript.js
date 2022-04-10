@@ -9,9 +9,14 @@ let round = 4;
 
 let blockNumber = 0;
 let blockCnt = false;
-let accountConnect = false;
+//컨트랙트
+let ABI;
+let CONTRACTADDRESS;
+let myContract;
 
 document.addEventListener("DOMContentLoaded", async function (event) {
+  await getContract();
+  myContract = new caver.klay.Contract(ABI, CONTRACTADDRESS);
   document.getElementById("address").innerHTML =
     "<p>Contract Address</p>\n" + `<p>${CONTRACTADDRESS}</p>`;
   try {
@@ -31,19 +36,10 @@ document.addEventListener("DOMContentLoaded", async function (event) {
 });
 function cntBlockNumber() {
   if (!blockCnt) {
-    setInterval(async function () {
-      //blockNumber += 1;
+    setInterval(function () {
+      blockNumber += 1;
       document.getElementById("currentblock").innerHTML =
         "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
-      let testAccounts = await klaytn.enable();
-      let currentAccount = testAccounts[0];
-
-      if (currentAccount !== account) {
-        account = currentAccount;
-        alert("Your account is " + account);
-
-        await connect();
-      }
     }, 1000);
     blockCnt = true;
   }
@@ -80,7 +76,6 @@ async function check_status() {
   const PUBLIC = 2;
   const WHITELIST = 1;
   const SPECIAL = 0;
-  const myContract = new caver.klay.Contract(ABI, CONTRACTADDRESS);
   await myContract.methods
     .mintingInformation()
     .call()
@@ -95,46 +90,56 @@ async function check_status() {
       round = parseInt(result[7]);
 
       if (round == SPECIAL) {
+        document.querySelector("progress").max = maxSaleAmount;
+        document.querySelector("progress").value = mintIndexForSale;
         //라운드 표시
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>Special</p>";
         //남은 수량 표시
-        document.querySelector("progress").value = mintIndexForSale - 1;
-        document.getElementById("amount_sign").style.left =
-          (mintIndexForSale - 1) / 1.16 + "%";
-        document.getElementById("count").innerHTML = `남은수량 : ${
-          mintIndexForSale - 1
+        document.getElementById("count").innerHTML = `남은 수량: ${
+          maxSaleAmount - (mintIndexForSale - 1)
         }`;
       } else if (round == WHITELIST) {
+        document.querySelector("progress").max = maxSaleAmount - 20;
+        document.querySelector("progress").value = mintIndexForSale - 20;
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>Whitelist</p>";
+
         //남은 수량 표시
-        document.querySelector("progress").value = mintIndexForSale - 1;
-        document.getElementById("amount_sign").style.left =
-          (mintIndexForSale - 1) / 1.16 + "%";
-        document.getElementById("count").innerHTML = `남은수량 : ${
-          mintIndexForSale - 1
+        document.getElementById("count").innerHTML = `남은 수량: ${
+          maxSaleAmount - (mintIndexForSale - 1)
         }`;
       } else if (round == PUBLIC) {
+        document.querySelector("progress").max = maxSaleAmount - 300;
+        document.querySelector("progress").value = mintIndexForSale - 300;
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>Public</p>";
         //남은 수량 표시
-        document.querySelector("progress").value = mintIndexForSale - 1;
-        document.getElementById("amount_sign").style.left =
-          (mintIndexForSale - 1) / 1.16 + "%";
-        document.getElementById("count").innerHTML = `남은수량 : ${
-          mintIndexForSale - 1
+
+        document.getElementById("count").innerHTML = `남은 수량: ${
+          maxSaleAmount - (mintIndexForSale - 1)
         }`;
       } else {
+        document.querySelector("progress").max = maxSaleAmount;
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>None</p>";
         //남은 수량 표시
-        document.querySelector("progress").value = mintIndexForSale - 1;
-        document.getElementById("amount_sign").style.left =
-          (mintIndexForSale - 1) / 1.16 + "%";
-        document.getElementById("count").innerHTML = `남은수량 : ${
-          mintIndexForSale - 1
+        document.getElementById("count").innerHTML = `남은 수량: ${
+          maxSaleAmount - (mintIndexForSale - 1)
         }`;
+      }
+
+      if (
+        document.querySelector("progress").value /
+          (document.querySelector("progress").max / 85) >
+        3
+      ) {
+        document.getElementById("amount_sign").style.left =
+          document.querySelector("progress").value /
+            (document.querySelector("progress").max / 85) +
+          "%";
+      } else {
+        document.getElementById("amount_sign").style.left = "3%";
       }
 
       document.getElementById("pertransacion").innerHTML =
@@ -191,7 +196,6 @@ async function allMint() {
   }
   await check_status();
 }
-const myContract = new caver.klay.Contract(ABI, CONTRACTADDRESS);
 
 async function publicMint() {
   if (klaytn.networkVersion === 8217) {
@@ -438,4 +442,20 @@ async function isSpecial() {
     },
   });
   return booldata;
+}
+
+async function getContract() {
+  await $.ajax({
+    url: "/getContract",
+    dataType: "json",
+    type: "POST",
+    success: function (result) {
+      ABI = result.postAbi;
+      CONTRACTADDRESS = result.postContract;
+      console.log(ABI, CONTRACTADDRESS);
+    },
+    error: function (request, status, error) {
+      return "Contract Load Error";
+    },
+  });
 }

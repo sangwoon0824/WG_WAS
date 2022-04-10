@@ -52,12 +52,12 @@ button:focus{
     width:770px;
     height:710px;
     margin-top:120px;
-    margin-left:60px;
+    margin-left:140px;
     background-color:#d3eaff;
     border-radius:60px;
 }
 #mint-box > button{
-    cursor:url('_cursor/cursor-rainbow.png'),auto;
+    cursor:pointer;
     position:absolute;
     right:3%;
     top:-60px;
@@ -65,6 +65,7 @@ button:focus{
     border:none;
     background-color:#fe7d8f;
     border-radius:30px;
+    cursor:pointer;
 }
 #mint-box button p{
     font-family:'yg-jalnan';
@@ -90,6 +91,7 @@ button:focus{
 #mint-box #currentblock p:first-child{
     color:#2f2f2f;
     font-size:11pt;
+    font-weight:bold;
 }
 #mint-box #currentblock p:last-child{
     color:#fe7d8f;
@@ -104,6 +106,7 @@ button:focus{
 #mint-box #mintingstartsat p:first-child{
     color:#2f2f2f;
     font-size:11pt;
+    font-weight:bold;
 }
 #mint-box #mintingstartsat p:last-child{
     color:#ffb8c2;
@@ -128,6 +131,7 @@ button:focus{
 #mint-box #price p:first-child{
     font-size:13pt;
     color:#2f2f2f;
+    font-weight:bold;
 }
 #mint-box #price p:last-child{
     color:#4896d9;
@@ -144,6 +148,7 @@ button:focus{
 #mint-box #pertransacion p:first-child{
     font-size:13pt;
     color:#2f2f2f;
+    font-weight:bold;
 }
 #mint-box #pertransacion p:last-child{
     color:#2f2f2f;
@@ -165,6 +170,7 @@ button:focus{
 #mint-box #perwallet p:first-child{
     font-size:13pt;
     color:#2f2f2f;
+    font-weight:bold;
 }
 #mint-box #perwallet p:last-child{
     color:#2f2f2f;
@@ -186,6 +192,7 @@ button:focus{
 #mint-box #nftamount p:first-child{
     font-size:16pt;
     color:#2f2f2f;
+    font-weight:bold;
 }
 #mint-box #nftamount progress{
     margin-top:12px;
@@ -233,12 +240,13 @@ button:focus{
     margin-top:30px;
     margin-left:50px;
     float:left;
-    width:17%;
+    width:21%;
     border-right:2px solid #ffffff;
 }
 #mint-box #round p:first-child{
     font-size:13pt;
     color:#2f2f2f;
+    font-weight:bold;
 }
 #mint-box #round p:last-child{
     color:#4896d9;
@@ -254,10 +262,12 @@ button:focus{
 #mint-box #address p:first-child{
     font-size:13pt;
     color:#2f2f2f;
+    font-weight:bold;
 }
 #mint-box #address p:last-child{
     color:#2f2f2f;
     padding-top:17px;
+    width:95%;
     font-size:14pt;
     overflow:hidden;
     text-overflow:ellipsis;
@@ -283,7 +293,6 @@ button:focus{
 }
 #mint-box form #minus{
     font-family:'yg-jalnan';
-    cursor:url('_cursor/cursor-rainbow.png'),auto;
     position:absolute;
     width:40px;
     height:40px;
@@ -296,10 +305,13 @@ button:focus{
     transform:translateY(-50%);
     left:150px;
     user-select:none;
+    cursor:pointer;
+}
+#mint-box form #minus:hover{
+    background-color:#ff8091;
 }
 #mint-box form #input_amount{
     font-family:'yg-jalnan';
-    cursor:url('_cursor/cursor-rainbow.png'),auto;
     position:absolute;
     width:100px;
     height:40px;
@@ -311,10 +323,10 @@ button:focus{
     padding-top:5px;
     border:3px solid #ffb8c2;
     border-radius:30px;
+    cursor:text;
 }
 #mint-box form #plus{
     font-family:'yg-jalnan';
-    cursor:url('_cursor/cursor-rainbow.png'),auto;
     position:absolute;
     width:40px;
     height:40px;
@@ -327,20 +339,34 @@ button:focus{
     transform:translateY(-50%);
     left:355px;
     user-select:none;
+    cursor:pointer;
+}
+#mint-box form #plus:hover{
+    background-color:#ff8091;
 }
 #mint-box form #input_submit{
     font-family:'yg-jalnan';
-    cursor:url('_cursor/cursor-rainbow.png'),auto;
     position:absolute;
     width:160px;
     height:50px;
     top:50%;
     transform:translateY(-50%);
-    background:#fe7d8f;
+    background:#ffb8c2;
     color:#ffffff;
     font-size:24pt;
     padding-top:2px;
     border:none;
     border-radius:30px;
     right:45px;
+    text-align:center;
+    cursor:pointer;
 }
+#mint-box form #input_submit:hover{
+    background-color:#ff8091;
+}
+
+@keyframes fadeinfadeout {
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }

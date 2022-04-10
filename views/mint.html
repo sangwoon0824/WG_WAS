@@ -4,20 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.js"
-      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link
       rel="icon"
       type="image/png"
-      href="http://52.79.231.241:800//img/meta/icon.png"
+      href="https://klayweathergirls.com/img/meta/icon.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="http://52.79.231.241:800/img/meta/icon.png"
+      href="https://klayweathergirls.com/img/meta/icon.png"
     />
 
     <script
@@ -28,7 +24,7 @@
       href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="http://52.79.231.241:800/css/style.css" />
+    <link rel="stylesheet" href="https://klayweathergirls.com/css/style.css" />
     <script type="text/javascript">
       function maxLengthCheck(object) {
         if (object.value.length > object.maxLength) {
@@ -39,9 +35,9 @@
     <title>Mint:KlayWeatherGirls</title>
   </head>
   <body>
-    <img id="bg" src="http://52.79.231.241:800/img/background/test.png" />
+    <img id="bg" src="https://klayweathergirls.com/img/background/1.png" />
     <!--LOGO-->
-    <img class="logo" src="http://52.79.231.241:800/img/meta/icon.png" />
+    <img class="logo" src="https://klayweathergirls.com/img/meta/icon.png" />
     <div id="root">
       <div id="mint-box">
         <button id="kaikasBtn" onclick="connect();">
@@ -50,29 +46,29 @@
         <p id="title">Minting Block Number</p>
         <div id="currentblock">
           <p>CURRENT BLOCK</p>
-          <p>#00000000</p>
+          <p>#</p>
         </div>
         <div id="mintingstartsat">
           <p>MINTING STARTS AT</p>
-          <p>#00000000</p>
+          <p>#</p>
         </div>
         <div class="bottomstripe"></div>
         <div id="price">
           <p>Price</p>
-          <p>50 Klay</p>
+          <p></p>
         </div>
         <div id="pertransacion">
           <p>Per Transacion</p>
-          <p>100개</p>
+          <p></p>
         </div>
         <div id="perwallet">
           <p>Per Wallet</p>
-          <p>100개</p>
+          <p></p>
         </div>
         <div class="bottomstripe"></div>
         <div id="nftamount">
           <p>NFT 수량</p>
-          <progress id="amountnft" value="7" min="0" max="100"></progress>
+          <progress id="amountnft" value="0" min="0" max="0"></progress>
           <div id="amount_sign">
             <p>▲</p>
             <p id="count">남은 수량:</p>
@@ -85,7 +81,7 @@
         </div>
         <div id="address">
           <p>Contract Address</p>
-          <p>0x8863DA25c39e88b723E5737CA5674b2C902ff019</p>
+          <p></p>
         </div>
         <form id="mint">
           <p>Amount</p>
@@ -100,12 +96,12 @@
             oninput="maxLengthCheck(this)"
           />
           <div id="plus">+</div>
-          <input id="input_submit" value="MINT" onclick="allMint()" />
+          <div id="input_submit" onclick="allMint()">MINT</div>
         </form>
       </div>
     </div>
-    <script src="http://52.79.231.241:800/js/config.js"></script>
-    <script src="http://52.79.231.241:800/js/mintScript.js"></script>
-    <script src="http://52.79.231.241:800/js/general.js"></script>
+    <script src="https://klayweathergirls.com/js/config.js"></script>
+    <script src="https://klayweathergirls.com/js/mintScript.js"></script>
+    <script src="https://klayweathergirls.com/js/general.js"></script>
   </body>
 </html>

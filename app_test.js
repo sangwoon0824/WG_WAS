@@ -62,7 +62,7 @@ app.use(
 );
 
 //테스트 서버 포트
-const port = process.env.PORT || 800;
+const port = process.env.PORT || 8888;
 
 //동적 폴더(CSS,JS 로딩 용이)
 app.use(express.static(__dirname + "/public"));
@@ -86,7 +86,7 @@ app.get("/metadata/:id", (req, res) => {
 app.get("/", (req, res) => {
   res.render("index.html");
 });
-app.get("/mint", (req, res) => {
+app.get("/mintwg20220410", (req, res) => {
   res.render("mint.html");
 });
 
@@ -102,6 +102,10 @@ app.post("/checkwhitelist", (req, res) => {
 app.post("/checkspecial", (req, res) => {
   var data = req.body.data;
   res.send({ result: isSpecial(String(data)) });
+});
+
+app.post("/getContract", (req, res) => {
+  res.send({ postAbi: CONTRACT.abi, postContract: CONTRACT.address });
 });
 
 //라우터에서 설정되어 있지 않은 주소로 접속하
