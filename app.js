@@ -111,7 +111,7 @@ app.post("/checkwhitelist", (req, res) => {
 app.post("/checkspecial", async (req, res) => {
   var address = req.body.data;
 
-  for (i = 0; i <= SPECIALLIST.length; i++) {
+  for (i = 0; i < 20; i++) {
     if (SPECIALLIST["#" + (i + 1)] == address) {
       console.log(SPECIALLIST["#" + (i + 1)]);
     }
