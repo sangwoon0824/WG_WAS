@@ -35,6 +35,14 @@ function cntBlockNumber() {
       blockNumber += 1;
       document.getElementById("currentblock").innerHTML =
         "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
+      let testAccounts = await klaytn.enable();
+      let currentAccount = testAccounts[0];
+
+      if (currentAccount !== account) {
+        account = currentAccount;
+        alert("Your account is " + account);
+        connect();
+      }
     }, 1000);
     blockCnt = true;
   }
