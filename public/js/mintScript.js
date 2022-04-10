@@ -304,36 +304,35 @@ async function specialMint(_inputAddress) {
   await check_status();
 }
 async function isWhitelist() {
-  let booldata = false;
-  await $.ajax({
-    url: "/checkwhitelist",
-    dataType: "json",
-    type: "POST",
-    data: { data: account },
-    success: function (result) {
-      if (result.result == true) {
-        booldata = true;
-      } else {
-        booldata = false;
-      }
-    },
-  });
-  return booldata;
+  let wlbool = false;
+  for (i = 0; i < whitelistJSON.length; i++) {
+    console.log(whitelistJSON[i]);
+    if (
+      String(whitelistJSON[i]).toLowerCase() ==
+      String(await klaytn.enable()).toLowerCase()
+    ) {
+      console.log("true");
+      wlbool = true;
+    }
+  }
+  console.log(wlbool);
+  return wlbool;
 }
 
 async function isSpecial(_address) {
-  let test = false;
+  let spbool = false;
   for (i = 0; i < speicalList.length; i++) {
     console.log(speicalList[i]);
     if (
-      String(speicalList[i]).toLowerCase() == String(_address).toLowerCase()
+      String(speicalList[i]).toLowerCase() ==
+      String(await klaytn.enable()).toLowerCase()
     ) {
       console.log("true");
-      test = true;
+      spbool = true;
     }
   }
-  console.log(test);
-  return test;
+  console.log(spbool);
+  return spbool;
 }
 /*
 async function isSpecial() {
