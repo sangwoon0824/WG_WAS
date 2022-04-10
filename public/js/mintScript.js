@@ -252,7 +252,7 @@ async function whitelistMint(_inputAddress) {
   await check_status();
 }
 async function specialMint(_inputAddress) {
-  if ((await isSpecial()) == true) {
+  if ((await isSpecial(_inputAddress)) == true) {
     if (klaytn.networkVersion === 8217) {
     } else if (klaytn.networkVersion === 1001) {
     } else {
@@ -320,6 +320,17 @@ async function isWhitelist() {
   });
   return booldata;
 }
+
+async function isSpecial(_address) {
+  for (i = 0; i <= speicalList.length; i++) {
+    console.log(speicalList[i]);
+    if (speicalList[i] == _address) {
+      return true;
+    }
+  }
+  return false;
+}
+/*
 async function isSpecial() {
   let booldata = false;
   await $.ajax({
@@ -337,7 +348,7 @@ async function isSpecial() {
   });
 
   return booldata;
-}
+}*/
 async function getContract() {
   await $.ajax({
     url: "/getContract",
