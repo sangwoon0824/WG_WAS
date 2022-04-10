@@ -41,8 +41,8 @@ function cntBlockNumber() {
       if (currentAccount !== account) {
         account = currentAccount;
         alert("Your account is " + account);
-        connect();
       }
+      connect();
     }, 1000);
     blockCnt = true;
   }
@@ -58,7 +58,7 @@ function cntAccount() {
         account = currentAccount;
         alert("Your account is " + account);
       }
-      connect();
+      await connect();
     }, 1000);
     accountConnect = true;
   }
