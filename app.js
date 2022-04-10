@@ -1,16 +1,16 @@
 //require 모음
 const express = require("express");
+const { append } = require("express/lib/response");
 const app = express();
 const router = express.Router();
+const fs = require("fs");
 //const helmet = require("helmet");
 const limit = require("express-rate-limit");
-const fs = require("fs");
 const Caver = require("caver-js");
 const CONTRACT = require("./build/wgContract.json");
 const { pkey, addr } = require("./dataset/secret.js");
 const bodyParser = require("body-parser");
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+const { stringify } = require("querystring");
 
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "ejs");
@@ -24,30 +24,6 @@ const acc = caver.klay.accounts.wallet.getAccount(0);
 
 const networkID = "1001";
 const contract = new caver.klay.Contract(CONTRACT.abi, CONTRACT.address);
-/*
-//basic node security
-const cspOptions = {
-  directives: {
-    // 기본 옵션을 가져옵니다.
-    ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-
-    "script-src": [
-      "'self'",
-      "*.googleapis.com",
-      "https://hangeul.pstatic.net",
-      "https://cdn.jsdelivr.net",
-    ],
-  },
-};
-
-
-// Helmet의 모든 기능 사용. (contentSecurityPolicy에는 custom option 적용)
-app.use(
-  helmet({
-    contentSecurityPolicy: cspOptions,
-  })
-);
-*/
 //hide backend engine
 app.disable("x-powered-by");
 

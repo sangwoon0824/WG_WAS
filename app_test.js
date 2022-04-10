@@ -8,8 +8,6 @@ const fs = require("fs");
 const Caver = require("caver-js");
 const CONTRACT = require("./build/wgContract.json");
 const { pkey, addr } = require("./dataset/secret.js");
-var util = require("util");
-var encoder = new util.TextEncoder("utf-8");
 
 const bodyParser = require("body-parser");
 
@@ -63,11 +61,8 @@ app.use(
   })
 );
 
-//포트 설정
-const port = process.env.PORT || 8080;
-
 //테스트 서버 포트
-//const port = process.env.PORT || 800;
+const port = process.env.PORT || 800;
 
 //동적 폴더(CSS,JS 로딩 용이)
 app.use(express.static(__dirname + "/public"));
