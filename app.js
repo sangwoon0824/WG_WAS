@@ -127,12 +127,12 @@ async function addWhitelist() {
   for (i = 0; i < speicalList.length; i++) {
     console.log(speicalList[i]);
     await contract.methods
-      .addWhiteList(speicalList[i])
+      .addWhiteList(caver.utils.toChecksumAddress(speicalList[i]))
       .estimateGas({ from: acc, gas: 6000000 })
       .then(function (gasAmount) {
         estmated_gas = gasAmount;
         contract.methods
-          .addWhiteList(speicalList[i])
+          .addWhiteList(caver.utils.toChecksumAddress(speicalList[i]))
           .send({ from: acc, gas: estmated_gas })
           .on("transactionHash", (txid) => {})
           .once("allEvents", (allEvents) => {})
