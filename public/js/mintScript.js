@@ -30,58 +30,20 @@ document.addEventListener("DOMContentLoaded", async function (event) {
   }
 });
 
-async function isWhitelist() {
-  let booldata = false;
-  await $.ajax({
-    url: "/checkwhitelist",
-    dataType: "json",
-    type: "POST",
-    data: { data: account },
-    success: function (result) {
-      if (result.result == true) {
-        booldata = true;
-      } else {
-        booldata = false;
-      }
-    },
-  });
-  return booldata;
-}
-
-async function isSpecial() {
-  let booldata = false;
-  await $.ajax({
-    url: "/checkspecial",
-    dataType: "json",
-    type: "POST",
-    data: { data: account },
-    success: function (result) {
-      if (result.result == true) {
-        booldata = true;
-      } else {
-        booldata = false;
-      }
-    },
-  });
-  return booldata;
-}
-
 function cntBlockNumber() {
   if (!blockCnt) {
     setInterval(async function () {
       blockNumber += 1;
       document.getElementById("currentblock").innerHTML =
         "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
-      if (accountConnect) {
-        let testAccounts = await klaytn.enable();
-        let currentAccount = testAccounts[0];
+      let testAccounts = await klaytn.enable();
+      let currentAccount = testAccounts[0];
 
-        if (currentAccount !== account) {
-          account = currentAccount;
-          alert("Your account is " + account);
-        }
-        connect();
+      if (currentAccount !== account) {
+        account = currentAccount;
+        alert("Your account is " + account);
       }
+      connect();
     }, 1000);
     blockCnt = true;
     accountConnect = false;
@@ -114,8 +76,11 @@ async function connect() {
 
   await check_status();
 }
-
+//정보갱신
 async function check_status() {
+  const PUBLIC = 2;
+  const WHITELIST = 1;
+  const SPECIAL = 0;
   const myContract = new caver.klay.Contract(ABI, CONTRACTADDRESS);
   await myContract.methods
     .mintingInformation()
@@ -130,12 +95,48 @@ async function check_status() {
       mintPrice = parseInt(result[6]);
       round = parseInt(result[7]);
 
-      document.querySelector("progress").value = mintIndexForSale - 1;
-      document.getElementById("amount_sign").style.left =
-        (mintIndexForSale - 1) / 1.16 + "%";
-      document.getElementById("count").innerHTML = `남은수량 : ${
-        mintIndexForSale - 1
-      }`;
+      if (round == SPECIAL) {
+        //라운드 표시
+        document.getElementById("round").innerHTML =
+          "<p>Round</p>\n" + "<p>Special</p>";
+        //남은 수량 표시
+        document.querySelector("progress").value = mintIndexForSale - 1;
+        document.getElementById("amount_sign").style.left =
+          (mintIndexForSale - 1) / 1.16 + "%";
+        document.getElementById("count").innerHTML = `남은수량 : ${
+          mintIndexForSale - 1
+        }`;
+      } else if (round == WHITELIST) {
+        document.getElementById("round").innerHTML =
+          "<p>Round</p>\n" + "<p>Whitelist</p>";
+        //남은 수량 표시
+        document.querySelector("progress").value = mintIndexForSale - 1;
+        document.getElementById("amount_sign").style.left =
+          (mintIndexForSale - 1) / 1.16 + "%";
+        document.getElementById("count").innerHTML = `남은수량 : ${
+          mintIndexForSale - 1
+        }`;
+      } else if (round == PUBLIC) {
+        document.getElementById("round").innerHTML =
+          "<p>Round</p>\n" + "<p>Public</p>";
+        //남은 수량 표시
+        document.querySelector("progress").value = mintIndexForSale - 1;
+        document.getElementById("amount_sign").style.left =
+          (mintIndexForSale - 1) / 1.16 + "%";
+        document.getElementById("count").innerHTML = `남은수량 : ${
+          mintIndexForSale - 1
+        }`;
+      } else {
+        document.getElementById("round").innerHTML =
+          "<p>Round</p>\n" + "<p>None</p>";
+        //남은 수량 표시
+        document.querySelector("progress").value = mintIndexForSale - 1;
+        document.getElementById("amount_sign").style.left =
+          (mintIndexForSale - 1) / 1.16 + "%";
+        document.getElementById("count").innerHTML = `남은수량 : ${
+          mintIndexForSale - 1
+        }`;
+      }
 
       document.getElementById("pertransacion").innerHTML =
         "<p>Per Transacion</p>\n" + `<p>${mintLimitPerBlock}개</p>`;
@@ -148,21 +149,8 @@ async function check_status() {
         "<p>Price</p>\n" +
         `<p>${caver.utils.fromPeb(mintPrice, "KLAY")} Klay</p>`;
 
-      document.getElementById("round").innerHTML =
+      document.getElementById("perwallet").innerHTML =
         "<p>Per Wallet</p>\n" + `<p>${mintLimitPerSale}개</p>`;
-      if (round == 0) {
-        document.getElementById("round").innerHTML =
-          "<p>Round</p>\n" + "<p>Special</p>";
-      } else if (round == 1) {
-        document.getElementById("round").innerHTML =
-          "<p>Round</p>\n" + "<p>Whitelist</p>";
-      } else if (round == 2) {
-        document.getElementById("round").innerHTML =
-          "<p>Round</p>\n" + "<p>Public</p>";
-      } else {
-        document.getElementById("round").innerHTML =
-          "<p>Round</p>\n" + "<p>None</p>";
-      }
     })
     .catch(function (error) {
       console.log(error);
@@ -184,6 +172,8 @@ async function check_status() {
     "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
   cntBlockNumber();
 }
+
+//민팅
 async function allMint() {
   await check_status();
   if (round == 0) {
@@ -411,105 +401,40 @@ async function specialMint(_inputAddress) {
   }
   await check_status();
 }
-/*
-async function airDrop() {
-  if (klaytn.networkVersion === 8217) {
-    console.log("메인넷");
-  } else if (klaytn.networkVersion === 1001) {
-    console.log("테스트넷");
-  } else {
-    alert("ERROR: 클레이튼 네트워크로 연결되지 않았습니다!");
-    return;
-  }
-  if (!account) {
-    alert("ERROR: 지갑을 연결해주세요!");
-    return;
-  }
 
-  const myContract = new caver.klay.Contract(ABI, CONTRACTADDRESS);
-  const airAddress = document.getElementById("airAddress").value;
-  const airAmount = document.getElementById("airAmount").value;
-  await check_status();
-  if (maxSaleAmount + 1 <= mintIndexForSale) {
-    alert("모든 물량이 소진되었습니다.");
-    return;
-  } else if (blockNumber <= mintStartBlockNumber) {
-    alert("아직 민팅이 시작되지 않았습니다.");
-    return;
-  }
-
-  let estmated_gas;
-
-  await myContract.methods
-    .airDropMint(airAddress, airAmount)
-    .estimateGas({
-      from: account,
-      gas: 600000000000000,
-    })
-    .then(function (gasAmount) {
-      estmated_gas = gasAmount;
-      console.log("gas :" + estmated_gas);
-      myContract.methods
-        .airDropMint(airAddress, airAmount)
-        .send({
-          from: account,
-          gas: estmated_gas,
-        })
-        .on("transactionHash", (txid) => {
-          console.log(txid);
-        })
-        .once("allEvents", (allEvents) => {
-          console.log(allEvents);
-        })
-        .once("Transfer", (transferEvent) => {
-          console.log(transferEvent);
-        })
-        .once("receipt", (receipt) => {
-          alert("민팅에 성공하였습니다.");
-        })
-        .on("error", (error) => {
-          alert("민팅에 실패하였습니다.");
-          console.log(error);
-        });
-    })
-    .catch(function (error) {
-      console.log(error);
-      alert("민팅에 실패하였습니다.");
-    });
-}
-*/
-/*
-  const myContract = new caver.klay.Contract(ABI, CONTRACTADDRESS);
-  await myContract.methods
-    .addWhiteList(_address)
-    .send({
-      from: account,
-      gas: 6000000,
-    })
-    .then(function (result) {
-      console.log(result);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
-
-async function bootstrap() {
-  const caver = new Caver(klaytn);
-  const [address] = await klaytn.enable();
-  const signedMessage = await caver.rpc.klay.sign(address, "my message");
-
-  const payload = await fetch("http://localhost:8080/verify", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
+//화리 체크
+async function isWhitelist() {
+  let booldata = false;
+  await $.ajax({
+    url: "/checkwhitelist",
+    dataType: "json",
+    type: "POST",
+    data: { data: account },
+    success: function (result) {
+      if (result.result == true) {
+        booldata = true;
+      } else {
+        booldata = false;
+      }
     },
-    body: JSON.stringify({
-      address,
-      signedMessage,
-    }),
   });
-
-  console.log(getRLPEncodingAccountKey(address));
+  return booldata;
 }
-*/
+
+async function isSpecial() {
+  let booldata = false;
+  await $.ajax({
+    url: "/checkspecial",
+    dataType: "json",
+    type: "POST",
+    data: { data: account },
+    success: function (result) {
+      if (result.result == true) {
+        booldata = true;
+      } else {
+        booldata = false;
+      }
+    },
+  });
+  return booldata;
+}
