@@ -115,9 +115,9 @@ app.post("/checkspecial", async (req, res) => {
   for (i = 0; i <= spDB.length; i++) {
     let data = spDB[i];
     let dataST = String(data).substr(0, 42);
-    console.log(String(dataST).toUpperCase() == address.toUpperCase());
     if (String(dataST).toUpperCase() == address.toUpperCase()) {
       boolSP == true;
+      console.log("Suc");
     }
   }
   res.send({ result: String(boolSP) });
