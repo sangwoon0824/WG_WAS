@@ -322,13 +322,14 @@ async function isWhitelist() {
 }
 
 async function isSpecial(_address) {
+  let test = false;
   for (i = 0; i < speicalList.length; i++) {
     console.log(speicalList[i]);
     if (speicalList[i].toLowerCase() == _address.toLowerCase()) {
-      return true;
+      test = true;
     }
   }
-  return false;
+  return test;
 }
 /*
 async function isSpecial() {
