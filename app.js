@@ -108,8 +108,9 @@ app.post("/checkwhitelist", (req, res) => {
 
 app.post("/checkspecial", (req, res) => {
   var data = req.body.data;
-  console.log(isSpecial(String(data)));
+
   test = isSpecial(String(data));
+  console.log(test);
   res.send({ result: test });
 });
 
@@ -134,6 +135,8 @@ app.listen(port, (err) => {
 //----------------------Function part--------------------------------//
 //-------------------------------------------------------------------//
 
+let boolWL;
+
 async function isWhiteList(_inputAddress) {
   let article = fs.readFileSync(__dirname + "/dataset/whitelist.txt");
   let wlDB = String(article).split("\n");
@@ -142,13 +145,14 @@ async function isWhiteList(_inputAddress) {
     let data = wlDB[i];
     let dataST = String(data).substr(0, 42);
     if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
-      return "true";
+      boolWL = true;
     }
   }
-  return "false";
+  return boolWL;
 }
 
 async function isSpecial(_inputAddress) {
+  let boolSP = false;
   let article = fs.readFileSync(__dirname + "/dataset/special.txt");
   let spDB = String(article).split("\n");
 
@@ -157,8 +161,10 @@ async function isSpecial(_inputAddress) {
     let dataST = String(data).substr(0, 42);
     console.log(String(dataST).toUpperCase() == _inputAddress.toUpperCase());
     if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
-      return "true";
+      boolSP == true;
+      return boolSP;
     }
   }
-  return "false";
+  boolSP == false;
+  return boolSP;
 }
