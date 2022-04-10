@@ -170,14 +170,14 @@ async function check_status() {
     )} KLAY`;
     
   });
-  
+  */
 
   //현재 블록 출력
-  
+  blockNumber = await caver.klay.getBlockNumber();
+
   document.getElementById("currentblock").innerHTML =
     "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
-    */
-  blockNumber = await caver.klay.getBlockNumber();
+
   cntBlockNumber();
 }
 
