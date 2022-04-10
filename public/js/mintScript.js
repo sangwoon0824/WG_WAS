@@ -243,12 +243,12 @@ async function specialMint(_inputAddress) {
   const total_value = amount * mintPrice;
   let estmated_gas;
   await myContract.methods
-    .whitelistMint(amount)
+    .specialMint(amount)
     .estimateGas({ from: account, gas: 6000000, value: total_value })
     .then(function (gasAmount) {
       estmated_gas = gasAmount;
       myContract.methods
-        .whitelistMint(amount)
+        .specialMint(amount)
         .send({ from: account, gas: estmated_gas, value: total_value })
         .on("transactionHash", (txid) => {})
         .once("allEvents", (allEvents) => {})
