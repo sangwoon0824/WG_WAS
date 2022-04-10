@@ -40,8 +40,8 @@ function cntBlockNumber() {
   }
 }
 
-function cntBlockNumber() {
-  if (!blockCnt) {
+function cntAccount() {
+  if (!accountConnect) {
     setInterval(async function () {
       let testAccounts = await klaytn.enable();
       let currentAccount = testAccounts[0];
@@ -52,7 +52,7 @@ function cntBlockNumber() {
       }
       connect();
     }, 1000);
-    accountConnect = false;
+    accountConnect = true;
   }
 }
 async function connect() {
@@ -179,6 +179,7 @@ async function check_status() {
     "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
 
   cntBlockNumber();
+  cntAccount();
 }
 
 //민팅
