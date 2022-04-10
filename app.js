@@ -132,7 +132,7 @@ app.listen(port, (err) => {
 //-------------------------------------------------------------------//
 
 async function isWhiteList(_inputAddress) {
-  const article = fs.readFileSync(__dirname + "/dataset/whitelist.txt");
+  let article = fs.readFileSync(__dirname + "/dataset/whitelist.txt");
   let wlDB = String(article).split("\n");
 
   for (i = 0; i <= wlDB.length; i++) {
@@ -146,7 +146,7 @@ async function isWhiteList(_inputAddress) {
 }
 
 async function isSpecial(_inputAddress) {
-  const article = fs.readFileSync(__dirname + "/dataset/special.txt");
+  let article = fs.readFileSync(__dirname + "/dataset/special.txt");
   let spDB = String(article).split("\n");
 
   for (i = 0; i <= spDB.length; i++) {
