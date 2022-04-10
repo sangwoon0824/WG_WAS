@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async function (event) {
   }
 });
 
-async function cntBlockNumber() {
+function cntBlockNumber() {
   if (!blockCnt) {
     setInterval(async function () {
       blockNumber += 1;
