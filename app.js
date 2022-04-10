@@ -107,7 +107,7 @@ app.post("/checkwhitelist", (req, res) => {
 });
 
 app.post("/checkspecial", (req, res) => {
-  var data = req.body.data;
+  var address = req.body.data;
   let boolSP = false;
   let article = fs.readFileSync(__dirname + "/dataset/special.txt");
   let spDB = String(article).split("\n");
@@ -115,8 +115,8 @@ app.post("/checkspecial", (req, res) => {
   for (i = 0; i <= spDB.length; i++) {
     let data = spDB[i];
     let dataST = String(data).substr(0, 42);
-    console.log(String(dataST).toUpperCase() == _inputAddress.toUpperCase());
-    if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
+    console.log(String(dataST).toUpperCase() == address.toUpperCase());
+    if (String(dataST).toUpperCase() == address.toUpperCase()) {
       boolSP == true;
     }
   }
