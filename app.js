@@ -121,6 +121,7 @@ app.post("/checkspecial", (req, res) => {
       res.send({ result: String(boolSP) });
     }
   }
+  res.send({ result: String(boolSP) });
 });
 
 app.post("/getContract", (req, res) => {
