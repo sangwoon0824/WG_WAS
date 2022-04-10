@@ -118,9 +118,9 @@ app.post("/checkspecial", async (req, res) => {
     if (String(dataST).toUpperCase() == address.toUpperCase()) {
       boolSP == true;
       console.log("Suc");
+      res.send({ result: String(boolSP) });
     }
   }
-  res.send({ result: String(boolSP) });
 });
 
 app.post("/getContract", (req, res) => {
