@@ -118,6 +118,9 @@ app.post("/checkspecial", async (req, res) => {
       });
     }
   }
+  res.send({
+    result: "false",
+  });
 });
 
 app.post("/getContract", (req, res) => {
