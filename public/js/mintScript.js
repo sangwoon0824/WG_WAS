@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", async function (event) {
 function cntBlockNumber() {
   if (!blockCnt) {
     setInterval(async function () {
-      blockNumber += 1;
-      document.getElementById("currentblock").innerHTML =
-        "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
+      //blockNumber += 1;
+      /*document.getElementById("currentblock").innerHTML =
+        "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;*/
       let testAccounts = await klaytn.enable();
       let currentAccount = testAccounts[0];
 
