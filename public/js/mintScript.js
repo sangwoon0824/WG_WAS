@@ -13,9 +13,9 @@ let contractaddress;
 let myContract;
 document.addEventListener("DOMContentLoaded", async function (event) {
   await getContract();
-  myContract = new caver.klay.Contract(ABI, CONTRACTADDRESS);
+  myContract = new caver.klay.Contract(abi, contractaddress);
   document.getElementById("address").innerHTML =
-    "<p>Contract Address</p>\n" + `<p>${CONTRACTADDRESS}</p>`;
+    "<p>Contract Address</p>\n" + `<p>${contractaddress}</p>`;
   try {
     const accounts = await klaytn.enable();
     if (!accounts) {
