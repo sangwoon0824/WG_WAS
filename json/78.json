@@ -1,16 +1,15 @@
 {
   "tokenID": 78,
   "name": "WeatherGirls #78",
-  "description": "Remember to replace this description",
-  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmdEDoetEvrbfqepJeHzrXRJKukL3zFuLgAjTGegsUmBXw",
+  "description": "WeatherGirls NFT is the art of girls' journey for lost weather",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmaienA4TLjbcqJuvFEJXHe8D6arwPonb28uwZNAZk6EEi",
   "attributes": [
-    { "trait_type": "background", "value": "red_background" },
-    { "trait_type": "body", "value": "scar" },
-    { "trait_type": "hair", "value": "straight_pink_hair" },
-    { "trait_type": "clothes", "value": "witch_clothes" },
-    { "trait_type": "mouth", "value": "triangle_mouth" },
-    { "trait_type": "eye", "value": "shock" },
-    { "trait_type": "accessories", "value": "minifan" }
-  ],
-  "date": 1649480623431
+    { "trait_type": "background", "value": "yellow_background" },
+    { "trait_type": "body", "value": "normal_skin" },
+    { "trait_type": "hair", "value": "ball_cap" },
+    { "trait_type": "clothes", "value": "black_tracksuit" },
+    { "trait_type": "mouth", "value": "p" },
+    { "trait_type": "eye", "value": "normal_eyes" },
+    { "trait_type": "accessories", "value": "monkey" }
+  ]
 }

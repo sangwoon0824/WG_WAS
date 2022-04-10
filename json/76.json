@@ -1,16 +1,15 @@
 {
   "tokenID": 76,
   "name": "WeatherGirls #76",
-  "description": "Remember to replace this description",
-  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmPciKBSgF7snNyiDPsTgVEEGcjsUxnH9UuUp99ZcK5K1C",
+  "description": "WeatherGirls NFT is the art of girls' journey for lost weather",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmfMx5DpiEWHDdLncDFBqf85Kwy2sPanQgUP6pqLS9rwE7",
   "attributes": [
-    { "trait_type": "background", "value": "blue_background" },
-    { "trait_type": "body", "value": "normal_skin" },
-    { "trait_type": "hair", "value": "space_buns" },
-    { "trait_type": "clothes", "value": "black_tracksuit" },
-    { "trait_type": "mouth", "value": "binkie" },
-    { "trait_type": "eye", "value": "crying_eyes" },
-    { "trait_type": "accessories", "value": "popcorn" }
-  ],
-  "date": 1649480623050
+    { "trait_type": "background", "value": "ground" },
+    { "trait_type": "body", "value": "yellow_skin" },
+    { "trait_type": "hair", "value": "straight_purple_hair" },
+    { "trait_type": "clothes", "value": "padded_coat" },
+    { "trait_type": "mouth", "value": "normal_mouth" },
+    { "trait_type": "eye", "value": "odd_eye" },
+    { "trait_type": "accessories", "value": "nintendo" }
+  ]
 }

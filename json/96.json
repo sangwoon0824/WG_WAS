@@ -1,16 +1,15 @@
 {
   "tokenID": 96,
   "name": "WeatherGirls #96",
-  "description": "Remember to replace this description",
-  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmbgrPhm4q5YMYWgw5XEcR6tysSi1sugdUxL9crjCD2PN2",
+  "description": "WeatherGirls NFT is the art of girls' journey for lost weather",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmUbMkmo7LBaSWdLYK2yENvUuDmJxJEHcnpcDdDQjtBh3U",
   "attributes": [
-    { "trait_type": "background", "value": "rain_weather" },
-    { "trait_type": "body", "value": "normal_skin" },
-    { "trait_type": "hair", "value": "straight_purple_hair" },
-    { "trait_type": "clothes", "value": "pink_tracksuit" },
-    { "trait_type": "mouth", "value": "mask" },
-    { "trait_type": "eye", "value": "dizzy" },
-    { "trait_type": "accessories", "value": "nintendo" }
-  ],
-  "date": 1649480629041
+    { "trait_type": "background", "value": "purple_background" },
+    { "trait_type": "body", "value": "white_skin" },
+    { "trait_type": "hair", "value": "kitty ears" },
+    { "trait_type": "clothes", "value": "skyblue_tracksuit" },
+    { "trait_type": "mouth", "value": "p" },
+    { "trait_type": "eye", "value": "cry" },
+    { "trait_type": "accessories", "value": "popcorn" }
+  ]
 }

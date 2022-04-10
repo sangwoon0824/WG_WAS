@@ -1,16 +1,15 @@
 {
   "tokenID": 36,
   "name": "WeatherGirls #36",
-  "description": "Remember to replace this description",
-  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmZfzvF9XoXEgZTyVWJAE4cwXjxUEFsEbBWkiGvLfxJ5ab",
+  "description": "WeatherGirls NFT is the art of girls' journey for lost weather",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmR6cDzZRhm4Qgbq7VjZmVpoWgt7VUHURJjQm8PQDyy63n",
   "attributes": [
-    { "trait_type": "background", "value": "ground" },
-    { "trait_type": "body", "value": "normal_skin" },
-    { "trait_type": "hair", "value": "purple_hair" },
-    { "trait_type": "clothes", "value": "hoodie" },
-    { "trait_type": "mouth", "value": "normal_mouth" },
-    { "trait_type": "eye", "value": "blue_eyes" },
-    { "trait_type": "accessories", "value": "minifan" }
-  ],
-  "date": 1649480612774
+    { "trait_type": "background", "value": "blue_background" },
+    { "trait_type": "body", "value": "dot" },
+    { "trait_type": "hair", "value": "blue_hair" },
+    { "trait_type": "clothes", "value": "qipao" },
+    { "trait_type": "mouth", "value": "p" },
+    { "trait_type": "eye", "value": "normal_eyes" },
+    { "trait_type": "accessories", "value": "popcorn" }
+  ]
 }
