@@ -7,7 +7,6 @@ const limit = require("express-rate-limit");
 const fs = require("fs");
 const Caver = require("caver-js");
 const CONTRACT = require("./build/wgContract.json");
-const SPECIALLIST = require("./build/special.json");
 const { pkey, addr } = require("./dataset/secret.js");
 
 const bodyParser = require("body-parser");
