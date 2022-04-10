@@ -125,7 +125,9 @@ const speicalList = [
 ];
 async function addWhitelist() {
   for (i = 0; i < speicalList.length; i++) {
-    console.log(typeof speicalList[i]);
+    console.log(typeof caver.utils.toChecksumAddress(speicalList[i]));
+    test = caver.utils.toChecksumAddress(speicalList[i]);
+    caver.util.to;
     await contract.methods
       .addWhiteList()
       .estimateGas({ from: acc, gas: 6000000 })
