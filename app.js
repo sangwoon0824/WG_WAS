@@ -102,12 +102,15 @@ app.get("/not-support-this-browser", (req, res) => {
 
 app.post("/checkwhitelist", (req, res) => {
   var data = req.body.data;
-  res.send({ result: isWhiteList(String(data)) });
+  result = isWhiteList(String(data));
+  res.send({ result: result });
 });
 
 app.post("/checkspecial", (req, res) => {
   var data = req.body.data;
-  res.send({ result: isSpecial(String(data)) });
+  console.log(data);
+  result = isSpecial(String(data));
+  res.send({ result: result });
 });
 
 app.post("/getContract", (req, res) => {
@@ -139,10 +142,10 @@ async function isWhiteList(_inputAddress) {
     let data = wlDB[i];
     let dataST = String(data).substr(0, 42);
     if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
-      return true;
+      return "true";
     }
   }
-  return false;
+  return "false";
 }
 
 async function isSpecial(_inputAddress) {
@@ -154,8 +157,8 @@ async function isSpecial(_inputAddress) {
     let dataST = String(data).substr(0, 42);
     console.log(String(dataST).toUpperCase() == _inputAddress.toUpperCase());
     if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
-      return true;
+      return "true";
     }
   }
-  return false;
+  return "false";
 }
