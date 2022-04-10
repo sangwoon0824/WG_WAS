@@ -118,10 +118,9 @@ app.post("/checkspecial", (req, res) => {
     console.log(String(dataST).toUpperCase() == address.toUpperCase());
     if (String(dataST).toUpperCase() == address.toUpperCase()) {
       boolSP == true;
-      break;
+      res.send({ result: String(boolSP) });
     }
   }
-  res.send({ result: String(boolSP) });
 });
 
 app.post("/getContract", (req, res) => {
