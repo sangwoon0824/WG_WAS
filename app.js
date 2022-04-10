@@ -62,7 +62,7 @@ app.use(
 );
 
 //테스트 서버 포트
-const port = process.env.PORT || 8888;
+const port = process.env.PORT || 8080;
 
 //동적 폴더(CSS,JS 로딩 용이)
 app.use(express.static(__dirname + "/public"));
