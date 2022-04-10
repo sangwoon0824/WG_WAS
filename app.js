@@ -108,9 +108,9 @@ app.post("/checkwhitelist", (req, res) => {
 
 app.post("/checkspecial", (req, res) => {
   var data = req.body.data;
-  console.log(data);
-  result = isSpecial(String(data));
-  res.send({ result: result });
+  console.log(isSpecial(String(data)));
+  test = isSpecial(String(data));
+  res.send({ result: test });
 });
 
 app.post("/getContract", (req, res) => {
