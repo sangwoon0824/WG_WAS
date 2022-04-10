@@ -325,7 +325,9 @@ async function isSpecial(_address) {
   let test = false;
   for (i = 0; i < speicalList.length; i++) {
     console.log(speicalList[i]);
-    if (speicalList[i].toLowerCase() == _address.toLowerCase()) {
+    if (
+      String(speicalList[i]).toLowerCase() == String(_address).toLowerCase()
+    ) {
       console.log("true");
       test = true;
     }
