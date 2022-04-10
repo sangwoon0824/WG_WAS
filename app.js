@@ -108,10 +108,19 @@ app.post("/checkwhitelist", (req, res) => {
 
 app.post("/checkspecial", (req, res) => {
   var data = req.body.data;
+  let boolSP = false;
+  let article = fs.readFileSync(__dirname + "/dataset/special.txt");
+  let spDB = String(article).split("\n");
 
-  test = isSpecial(String(data));
-  console.log(test);
-  res.send({ result: test });
+  for (i = 0; i <= spDB.length; i++) {
+    let data = spDB[i];
+    let dataST = String(data).substr(0, 42);
+    console.log(String(dataST).toUpperCase() == _inputAddress.toUpperCase());
+    if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
+      boolSP == true;
+    }
+  }
+  res.send({ result: boolSP });
 });
 
 app.post("/getContract", (req, res) => {
