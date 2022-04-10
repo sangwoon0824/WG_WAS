@@ -7,6 +7,7 @@ const limit = require("express-rate-limit");
 const fs = require("fs");
 const Caver = require("caver-js");
 const CONTRACT = require("./build/wgContract.json");
+const SPECIALLIST = require("./build/special.json");
 const { pkey, addr } = require("./dataset/secret.js");
 
 const bodyParser = require("body-parser");
@@ -99,26 +100,22 @@ app.get("/wgtestmint20220410", (req, res) => {
 app.get("/not-support-this-browser", (req, res) => {
   res.sendFile(__dirname + "/public/not-support-this-browser.html");
 });
-
+/*
 app.post("/checkwhitelist", (req, res) => {
   var data = req.body.data;
   result = isWhiteList(String(data));
   res.send({ result: result });
 });
+*/
 
 app.post("/checkspecial", async (req, res) => {
   var address = req.body.data;
-  let boolSP = false;
-  let article = fs.readFileSync(__dirname + "/dataset/special.txt");
-  let spDB = String(article).split("\n");
 
-  for (i = 0; i <= spDB.length; i++) {
-    let data = spDB[i];
-    let dataST = String(data).substr(0, 42);
-    if (String(dataST).toUpperCase() == address.toUpperCase()) {
-      boolSP == true;
-      console.log("Suc");
-      res.send({ result: String(boolSP) });
+  for (i = 0; i <= SPECIALLIST.length; i++) {
+    if (SPECIALLIST["#" + (i + 1)] == address) {
+      res.send({
+        result: "true",
+      });
     }
   }
 });
@@ -143,9 +140,7 @@ app.listen(port, (err) => {
 //-------------------------------------------------------------------//
 //----------------------Function part--------------------------------//
 //-------------------------------------------------------------------//
-
-let boolWL;
-
+/*
 async function isWhiteList(_inputAddress) {
   let article = fs.readFileSync(__dirname + "/dataset/whitelist.txt");
   let wlDB = String(article).split("\n");
@@ -177,3 +172,4 @@ async function isSpecial(_inputAddress) {
   boolSP == false;
   return boolSP;
 }
+*/
