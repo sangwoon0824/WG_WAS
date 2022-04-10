@@ -129,7 +129,7 @@ async function addWhitelist() {
     await contract.methods
       .addWhiteList(test)
       .estimateGas({ from: caver.utils.toChecksumAddress(addr), gas: 6000000 })
-      .then(function (gasAmount) {
+      .then(async function (gasAmount) {
         estmated_gas = gasAmount;
         await contract.methods
           .addWhiteList(test)
@@ -149,7 +149,7 @@ async function addWhitelist() {
           });
       })
       .catch(function (error) {
-        console.log("에러1 : 가스 계측 실패")
+        console.log("에러1 : 가스 계측 실패");
         console.log(error);
       });
   }
