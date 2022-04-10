@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async function (event) {
   }
 });
 
-function cntBlockNumber() {
+async function cntBlockNumber() {
   blockNumber = await caver.klay.getBlockNumber();
   if (!blockCnt) {
     setInterval(async function () {
