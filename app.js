@@ -86,7 +86,13 @@ app.get("/metadata/:id", (req, res) => {
 app.get("/", (req, res) => {
   res.render("index.html");
 });
+/*
 app.get("/mintwg20220410", (req, res) => {
+  res.render("mint.html");
+});
+*/
+
+app.get("/wgtestmint20220410", (req, res) => {
   res.render("mint.html");
 });
 
@@ -125,7 +131,7 @@ app.listen(port, (err) => {
 //----------------------Function part--------------------------------//
 //-------------------------------------------------------------------//
 
-function isWhiteList(_inputAddress) {
+async function isWhiteList(_inputAddress) {
   const article = fs.readFileSync("./dataset/whitelist.txt");
   let wlDB = String(article).split("\n");
 
@@ -138,9 +144,10 @@ function isWhiteList(_inputAddress) {
       return false;
     }
   }
+  return false;
 }
 
-function isSpecial(_inputAddress) {
+async function isSpecial(_inputAddress) {
   const article = fs.readFileSync("./dataset/special.txt");
   let spDB = String(article).split("\n");
 
@@ -154,4 +161,5 @@ function isSpecial(_inputAddress) {
       return false;
     }
   }
+  return false;
 }
