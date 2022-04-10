@@ -328,6 +328,7 @@ async function isSpecial() {
     type: "POST",
     data: { data: account },
     success: function (result) {
+      console.log(result.result);
       if (result.result == true) {
         booldata = true;
       } else {
@@ -335,6 +336,7 @@ async function isSpecial() {
       }
     },
   });
+
   return booldata;
 }
 async function getContract() {
