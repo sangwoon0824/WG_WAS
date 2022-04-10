@@ -132,7 +132,7 @@ app.listen(port, (err) => {
 //-------------------------------------------------------------------//
 
 async function isWhiteList(_inputAddress) {
-  const article = fs.readFileSync("./dataset/whitelist.txt");
+  const article = fs.readFileSync(__dirname + "/dataset/whitelist.txt");
   let wlDB = String(article).split("\n");
 
   for (i = 0; i <= wlDB.length; i++) {
@@ -140,13 +140,13 @@ async function isWhiteList(_inputAddress) {
     let dataST = String(data).substr(0, 42);
     if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
       return true;
-    } 
+    }
   }
   return false;
 }
 
 async function isSpecial(_inputAddress) {
-  const article = fs.readFileSync("./dataset/special.txt");
+  const article = fs.readFileSync(__dirname + "/dataset/special.txt");
   let spDB = String(article).split("\n");
 
   for (i = 0; i <= spDB.length; i++) {
@@ -155,7 +155,7 @@ async function isSpecial(_inputAddress) {
     console.log(String(dataST).toUpperCase() == _inputAddress.toUpperCase());
     if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
       return true;
-    } 
+    }
   }
   return false;
 }
