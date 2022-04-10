@@ -136,11 +136,34 @@ async function check_status() {
     "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
   cntBlockNumber();
 }
+
 async function allMint() {
+  await connect();
   await check_status();
+  //네트워크 필터
+  if (klaytn.networkVersion === 8217) {
+  } else if (klaytn.networkVersion === 1001) {
+  } else {
+    alert("ERROR: 클레이튼 네트워크로 연결되지 않았습니다!");
+    return;
+  }
+  if (!account) {
+    alert("ERROR: 지갑을 연결해주세요!");
+    return;
+  }
+  //물약, 블럭, 잔액 필터
+  if (maxSaleAmount + 1 <= mintIndexForSale) {
+    alert("모든 물량이 소진되었습니다.");
+    return;
+  } else if (blockNumber <= mintStartBlockNumber) {
+    alert("아직 민팅이 시작되지 않았습니다.");
+    return;
+  } else if (mintPrice > caver.klay.getBalance(account)) {
+    alert("지갑 잔액이 부족합니다!");
+    return;
+  }
+  // 라운드 필터
   if (round == 0) {
-    console.log(account);
-    console.log(typeof account);
     await specialMint(account);
   } else if (round == 1) {
     await whitelistMint(account);
@@ -152,25 +175,8 @@ async function allMint() {
   await check_status();
 }
 async function publicMint() {
-  if (klaytn.networkVersion === 8217) {
-  } else if (klaytn.networkVersion === 1001) {
-  } else {
-    alert("ERROR: 클레이튼 네트워크로 연결되지 않았습니다!");
-    return;
-  }
-  if (!account) {
-    alert("ERROR: 지갑을 연결해주세요!");
-    return;
-  }
   const amount = document.getElementById("input_amount").value;
-  await check_status();
-  if (maxSaleAmount + 1 <= mintIndexForSale) {
-    alert("모든 물량이 소진되었습니다.");
-    return;
-  } else if (blockNumber <= mintStartBlockNumber) {
-    alert("아직 민팅이 시작되지 않았습니다.");
-    return;
-  }
+
   const total_value = amount * mintPrice;
   let estmated_gas;
   await myContract.methods
@@ -189,170 +195,81 @@ async function publicMint() {
           alert("민팅에 성공하였습니다.");
         })
         .on("error", (error) => {
-          alert("민팅에 실패하였습니다.");
+          alert("에러2: 민팅에 실패하였습니다.");
           console.log(error);
         });
     })
     .catch(function (error) {
       console.log(error);
-      alert("민팅에 실패하였습니다.");
+      alert("에러1: 가스비 계측 실패");
     });
   await check_status();
 }
 async function whitelistMint(_inputAddress) {
-  if ((await isWhitelist()) == true) {
-    if (klaytn.networkVersion === 8217) {
-    } else if (klaytn.networkVersion === 1001) {
-    } else {
-      alert("ERROR: 클레이튼 네트워크로 연결되지 않았습니다!");
-      return;
-    }
-    if (!account) {
-      alert("ERROR: 지갑을 연결해주세요!");
-      return;
-    }
-    const amount = document.getElementById("input_amount").value;
-    await check_status();
-    if (maxSaleAmount + 1 <= mintIndexForSale) {
-      alert("모든 물량이 소진되었습니다.");
-      return;
-    } else if (blockNumber <= mintStartBlockNumber) {
-      alert("아직 민팅이 시작되지 않았습니다.");
-      return;
-    }
-    const total_value = amount * mintPrice;
-    let estmated_gas;
-    await myContract.methods
-      .whitelistMint(amount)
-      .estimateGas({ from: account, gas: 6000000, value: total_value })
-      .then(function (gasAmount) {
-        estmated_gas = gasAmount;
-        myContract.methods
-          .whitelistMint(amount)
-          .send({ from: account, gas: estmated_gas, value: total_value })
-          .on("transactionHash", (txid) => {})
-          .once("allEvents", (allEvents) => {})
-          .once("Transfer", (transferEvent) => {})
-          .once("receipt", (receipt) => {
-            check_status();
-            alert("민팅에 성공하였습니다.");
-          })
-          .on("error", (error) => {
-            alert("민팅에 실패하였습니다.");
-            console.log(error);
-          });
-      })
-      .catch(function (error) {
-        console.log(error);
-        alert("민팅에 실패하였습니다.");
-      });
-  } else {
-    alert("화리 유저만 가능합니다!");
-  }
+  const amount = document.getElementById("input_amount").value;
+
+  const total_value = amount * mintPrice;
+  let estmated_gas;
+  await myContract.methods
+    .whitelistMint(amount)
+    .estimateGas({ from: account, gas: 6000000, value: total_value })
+    .then(function (gasAmount) {
+      estmated_gas = gasAmount;
+      myContract.methods
+        .whitelistMint(amount)
+        .send({ from: account, gas: estmated_gas, value: total_value })
+        .on("transactionHash", (txid) => {})
+        .once("allEvents", (allEvents) => {})
+        .once("Transfer", (transferEvent) => {})
+        .once("receipt", (receipt) => {
+          check_status();
+          alert("민팅에 성공하였습니다.");
+        })
+        .on("error", (error) => {
+          alert("에러2: 민팅에 실패하였습니다.");
+          console.log(error);
+        });
+    })
+    .catch(function (error) {
+      console.log(error);
+      alert("에러1: 가스비 계측 실패");
+    });
+
   await check_status();
 }
 async function specialMint(_inputAddress) {
-  if ((await isSpecial(_inputAddress)) == true) {
-    if (klaytn.networkVersion === 8217) {
-    } else if (klaytn.networkVersion === 1001) {
-    } else {
-      alert("ERROR: 클레이튼 네트워크로 연결되지 않았습니다!");
-      return;
-    }
-    if (!account) {
-      alert("ERROR: 지갑을 연결해주세요!");
-      return;
-    }
-    const amount = document.getElementById("input_amount").value;
-    await check_status();
-    if (maxSaleAmount + 1 <= mintIndexForSale) {
-      alert("모든 물량이 소진되었습니다.");
-      return;
-    } else if (blockNumber <= mintStartBlockNumber) {
-      alert("아직 민팅이 시작되지 않았습니다.");
-      return;
-    }
-    const total_value = amount * mintPrice;
-    let estmated_gas;
-    await myContract.methods
-      .whitelistMint(amount)
-      .estimateGas({ from: account, gas: 6000000, value: total_value })
-      .then(function (gasAmount) {
-        estmated_gas = gasAmount;
-        myContract.methods
-          .whitelistMint(amount)
-          .send({ from: account, gas: estmated_gas, value: total_value })
-          .on("transactionHash", (txid) => {})
-          .once("allEvents", (allEvents) => {})
-          .once("Transfer", (transferEvent) => {})
-          .once("receipt", (receipt) => {
-            check_status();
-            alert("민팅에 성공하였습니다.");
-          })
-          .on("error", (error) => {
-            alert("민팅에 실패하였습니다.");
-            console.log(error);
-          });
-      })
-      .catch(function (error) {
-        console.log(error);
-        alert("민팅에 실패하였습니다.");
-      });
-  } else {
-    alert("스페셜 유저만 가능합니다!");
-  }
+  const amount = document.getElementById("input_amount").value;
+
+  const total_value = amount * mintPrice;
+  let estmated_gas;
+  await myContract.methods
+    .whitelistMint(amount)
+    .estimateGas({ from: account, gas: 6000000, value: total_value })
+    .then(function (gasAmount) {
+      estmated_gas = gasAmount;
+      myContract.methods
+        .whitelistMint(amount)
+        .send({ from: account, gas: estmated_gas, value: total_value })
+        .on("transactionHash", (txid) => {})
+        .once("allEvents", (allEvents) => {})
+        .once("Transfer", (transferEvent) => {})
+        .once("receipt", (receipt) => {
+          check_status();
+          alert("민팅에 성공하였습니다.");
+        })
+        .on("error", (error) => {
+          alert("에러2 : 민팅 실패");
+          console.log(error);
+        });
+    })
+    .catch(function (error) {
+      console.log(error);
+      alert("에러1 : 가스비 계측 실패");
+    });
+
   await check_status();
 }
-async function isWhitelist() {
-  let wlbool = false;
-  for (i = 0; i < whitelistJSON.length; i++) {
-    console.log(whitelistJSON[i]);
-    if (
-      String(whitelistJSON[i]).toLowerCase() ==
-      String(await klaytn.enable()).toLowerCase()
-    ) {
-      console.log("true");
-      wlbool = true;
-    }
-  }
-  console.log(wlbool);
-  return wlbool;
-}
 
-async function isSpecial(_address) {
-  let spbool = false;
-  for (i = 0; i < speicalList.length; i++) {
-    console.log(speicalList[i]);
-    if (
-      String(speicalList[i]).toLowerCase() ==
-      String(await klaytn.enable()).toLowerCase()
-    ) {
-      console.log("true");
-      spbool = true;
-    }
-  }
-  console.log(spbool);
-  return spbool;
-}
-/*
-async function isSpecial() {
-  let booldata = false;
-  await $.ajax({
-    url: "/checkspecial",
-    dataType: "json",
-    type: "POST",
-    data: { data: account },
-    success: function (result) {
-      if (result.result == "true") {
-        booldata = true;
-      } else {
-        booldata = false;
-      }
-    },
-  });
-
-  return booldata;
-}*/
 async function getContract() {
   await $.ajax({
     url: "/getContract",

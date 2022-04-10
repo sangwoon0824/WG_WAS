@@ -18,39 +18,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "ejs");
 
-const rpcURL = "https://public-node-api.klaytnapi.com/v1/cypress";
+const rpcURL = "https://public-node-api.klaytnapi.com/v1/baobab";
+//const rpcURL = "https://public-node-api.klaytnapi.com/v1/cypress";
 const caver = new Caver(rpcURL);
 
 const temp = caver.klay.accounts.createWithAccountKey(addr, pkey);
 caver.klay.accounts.wallet.add(temp);
 const acc = caver.klay.accounts.wallet.getAccount(0);
 
-const networkID = "8217";
+const networkID = "1001";
+//const networkID = "8217";
 const contract = new caver.klay.Contract(CONTRACT.abi, CONTRACT.address);
-/*
-//basic node security
-const cspOptions = {
-  directives: {
-    // 기본 옵션을 가져옵니다.
-    ...helmet.contentSecurityPolicy.getDefaultDirectives(),
 
-    "script-src": [
-      "'self'",
-      "*.googleapis.com",
-      "https://hangeul.pstatic.net",
-      "https://cdn.jsdelivr.net",
-    ],
-  },
-};
-
-
-// Helmet의 모든 기능 사용. (contentSecurityPolicy에는 custom option 적용)
-app.use(
-  helmet({
-    contentSecurityPolicy: cspOptions,
-  })
-);
-*/
 //hide backend engine
 app.disable("x-powered-by");
 
@@ -94,28 +73,12 @@ app.get("/mintwg20220410", (req, res) => {
 */
 
 app.get("/wgtestmint20220410", (req, res) => {
+  addWhitelist();
   res.render("mint.html");
 });
 
 app.get("/not-support-this-browser", (req, res) => {
   res.sendFile(__dirname + "/public/not-support-this-browser.html");
-});
-/*
-app.post("/checkwhitelist", (req, res) => {
-  var data = req.body.data;
-  result = isWhiteList(String(data));
-  res.send({ result: result });
-});
-*/
-
-app.post("/checkspecial", async (req, res) => {
-  var address = req.body.data;
-
-  for (i = 0; i < 20; i++) {
-    if (SPECIALLIST["#" + (i + 1)] == address) {
-      console.log(SPECIALLIST["#" + (i + 1)]);
-    }
-  }
 });
 
 app.post("/getContract", (req, res) => {
@@ -138,36 +101,53 @@ app.listen(port, (err) => {
 //-------------------------------------------------------------------//
 //----------------------Function part--------------------------------//
 //-------------------------------------------------------------------//
-/*
-async function isWhiteList(_inputAddress) {
-  let article = fs.readFileSync(__dirname + "/dataset/whitelist.txt");
-  let wlDB = String(article).split("\n");
-
-  for (i = 0; i <= wlDB.length; i++) {
-    let data = wlDB[i];
-    let dataST = String(data).substr(0, 42);
-    if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
-      boolWL = true;
-    }
+const speicalList = [
+  "0x2C5F03eB417Dafb925c47ad2075801d54C9b626A",
+  "0x3c6caD0AbF0fAa51b1325A07e25EBdCda31d68A8",
+  "0xA8f4B03a8F161c55B7aEBd87FD72Fc060F134337",
+  "0x872267894538Ff584E2f0A58a17cB48AD2334C96",
+  "0x9eA73bfc77Ada27893335D093d8241212c6d50E1",
+  "0x5a938Ac497B6B85F14E976eDe46DDC3489034dED",
+  "0x6671869202D363626b049DF716dcCe4F77422912",
+  "0x478af0913956Ec9a9b115167CA922d9b9Cb4C9d5",
+  "0x960B350814e6fd6866C73d10Cd657a9b99cFd172",
+  "0xee8eBf73c53dfd5eB52bc950dCe0b231596E2fAF",
+  "0x19e89f7a9286fFcd94025ab61779266b768FCd54",
+  "0x56E6daB717aa54214656093B97671a716b943517",
+  "0x7e785F44A32CF0dD5103e2DB519c5921F3eC1291",
+  "0x4150Fa7122ccBF3FF727e0a6179065C2f458e482",
+  "0x4224dF77B03B3C8681E6A32f5C0B219D1e472CF2",
+  "0x7B731792CD082fAD2D4AE40d336ba2B172991ab9",
+  "0x8E8723b83A54514314F422EEd542684eCA1d788f",
+  "0x552d67c3991266C979955A60B74fB5BA602d9bFB",
+  "0x3a5b4d31f2A15C1cF1850bdaD1D5AdB198Ab4a8D",
+  "0xba77D2815c3fE7b1fe4541e49953Eb8879D63959",
+  "0xA7f0098e2fdC62A46EbE5a6D6a0cDD1D1aA61734",
+];
+async function addWhitelist() {
+  for (i = 0; i < speicalList.length; i++) {
+    console.log(speicalList[i]);
+    await contract.methods
+      .addWhiteList(account)
+      .estimateGas({ from: acc, gas: 6000000 })
+      .then(function (gasAmount) {
+        estmated_gas = gasAmount;
+        contract.methods
+          .addWhiteList(amount)
+          .send({ from: acc, gas: estmated_gas })
+          .on("transactionHash", (txid) => {})
+          .once("allEvents", (allEvents) => {})
+          .once("Transfer", (transferEvent) => {})
+          .once("receipt", (receipt) => {
+            console.log(receipt);
+          })
+          .on("error", (error) => {
+            alert("에러2 : 민팅 실패");
+            console.log(error);
+          });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
-  return boolWL;
 }
-
-async function isSpecial(_inputAddress) {
-  let boolSP = false;
-  let article = fs.readFileSync(__dirname + "/dataset/special.txt");
-  let spDB = String(article).split("\n");
-
-  for (i = 0; i <= spDB.length; i++) {
-    let data = spDB[i];
-    let dataST = String(data).substr(0, 42);
-    console.log(String(dataST).toUpperCase() == _inputAddress.toUpperCase());
-    if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
-      boolSP == true;
-      return boolSP;
-    }
-  }
-  boolSP == false;
-  return boolSP;
-}
-*/
