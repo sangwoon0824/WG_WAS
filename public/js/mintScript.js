@@ -329,7 +329,7 @@ async function isSpecial() {
     data: { data: account },
     success: function (result) {
       data = JSON.stringify(result);
-      console.log(data);
+      console.log(result.result);
       if (result.result == "true") {
         booldata = true;
       } else {
