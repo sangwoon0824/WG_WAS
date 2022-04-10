@@ -140,9 +140,7 @@ async function isWhiteList(_inputAddress) {
     let dataST = String(data).substr(0, 42);
     if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
       return true;
-    } else {
-      return false;
-    }
+    } 
   }
   return false;
 }
@@ -157,9 +155,7 @@ async function isSpecial(_inputAddress) {
     console.log(String(dataST).toUpperCase() == _inputAddress.toUpperCase());
     if (String(dataST).toUpperCase() == _inputAddress.toUpperCase()) {
       return true;
-    } else {
-      return false;
-    }
+    } 
   }
   return false;
 }
