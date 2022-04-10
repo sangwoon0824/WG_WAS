@@ -42,25 +42,9 @@ function cntBlockNumber() {
         account = currentAccount;
         alert("Your account is " + account);
       }
-      connect();
-    }, 1000);
-    blockCnt = true;
-  }
-}
-
-function cntAccount() {
-  if (!accountConnect) {
-    setInterval(async function () {
-      let testAccounts = await klaytn.enable();
-      let currentAccount = testAccounts[0];
-
-      if (currentAccount !== account) {
-        account = currentAccount;
-        alert("Your account is " + account);
-      }
       await connect();
     }, 1000);
-    accountConnect = true;
+    blockCnt = true;
   }
 }
 async function connect() {
@@ -187,7 +171,6 @@ async function check_status() {
     "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
 
   cntBlockNumber();
-  cntAccount();
 }
 
 //민팅
