@@ -72,7 +72,7 @@ app.get("/mintwg20220410", (req, res) => {
 */
 
 app.get("/wgtestmint20220410", async (req, res) => {
-  await addWhitelist();
+  //await addWhitelist();
   res.render("mint.html");
 });
 
