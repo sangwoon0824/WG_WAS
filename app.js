@@ -17,14 +17,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "ejs");
 
-const rpcURL = "https://api.baobab.klaytn.net:8651/";
+const rpcURL = "https://public-node-api.klaytnapi.com/v1/cypress";
 const caver = new Caver(rpcURL);
 
 const temp = caver.klay.accounts.createWithAccountKey(addr, pkey);
 caver.klay.accounts.wallet.add(temp);
 const acc = caver.klay.accounts.wallet.getAccount(0);
 
-const networkID = "1001";
+const networkID = "8217";
 const contract = new caver.klay.Contract(CONTRACT.abi, CONTRACT.address);
 /*
 //basic node security
