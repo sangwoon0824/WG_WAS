@@ -120,7 +120,7 @@ app.post("/checkspecial", (req, res) => {
       boolSP == true;
     }
   }
-  res.send({ result: boolSP });
+  res.send({ result: String(boolSP) });
 });
 
 app.post("/getContract", (req, res) => {
