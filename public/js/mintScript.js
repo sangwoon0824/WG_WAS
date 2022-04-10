@@ -328,7 +328,8 @@ async function isSpecial() {
     type: "POST",
     data: { data: account },
     success: function (result) {
-      console.log(result.result);
+      data = JSON.stringify(result);
+      console.log(data);
       if (result.result == "true") {
         booldata = true;
       } else {
