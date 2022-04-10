@@ -16,9 +16,14 @@ const footer_kakaotalk = document.getElementsByClassName("icon-kakaotalk")[2];
 
 const mobile_youtube = document.getElementsByClassName("icon-youtube")[0];
 const footer_youtube = document.getElementsByClassName("icon-youtube")[1];
+const button_youtube = document.getElementById("youtube-button");
 
 const mobile_instagram = document.getElementsByClassName("icon-instagram")[0];
 const footer_instagram = document.getElementsByClassName("icon-instagram")[1];
+
+const mobile_medium = document.getElementsByClassName("icon-medium")[0];
+const footer_medium = document.getElementsByClassName("icon-medium")[1];
+const button_medium = document.getElementById("medium-button");
 
 function link_opensea(){
     alert('Comming Soon!');
@@ -38,6 +43,9 @@ function link_youtube(){
 function link_instagram(){
     window.open('about:blank').location.href='https://www.instagram.com/weathergirlsnft';
 }
+function link_medium(){
+    window.open('about:blank').location.href='https://medium.com/@KlayWeatherGirls';
+}
 
 nav_opensea.addEventListener("click",link_opensea);
 mobile_opensea.addEventListener("click",link_opensea);
@@ -51,12 +59,39 @@ nav_discord.addEventListener("click",link_discord);
 mobile_discord.addEventListener("click",link_discord);
 footer_discord.addEventListener("click",link_discord);
 
-nav_kakaotalk.addEventListener("click",link_kakaotalk);
-mobile_kakaotalk.addEventListener("click",link_kakaotalk);
-footer_kakaotalk.addEventListener("click",link_kakaotalk);
-
 mobile_youtube.addEventListener("click",link_youtube);
 footer_youtube.addEventListener("click",link_youtube);
+button_youtube.addEventListener("click",link_youtube);
 
 mobile_instagram.addEventListener("click",link_instagram);
 footer_instagram.addEventListener("click",link_instagram);
+
+mobile_medium.addEventListener("click",link_medium);
+footer_medium.addEventListener("click",link_medium);
+button_medium.addEventListener("click",link_medium);
+
+document.getElementsByClassName("roadmap_doodle")[3].addEventListener("click",function(){
+    window.open('about:blank').location.href='https://www.youtube.com/channel/UCU7jA5XDiijAZgYIuOYonQw';
+});
+
+var mailadd = document.getElementById("mail");
+var completed_box = document.getElementById("completed");
+var mailaddress = document.getElementById("mail").innerHTML;
+
+function copymailaddress(){
+    const tmptextarea = document.createElement('textarea');
+    tmptextarea.value = "WeatherGirls0211@gmail.com";
+
+    document.body.appendChild(tmptextarea);
+    tmptextarea.select();
+    tmptextarea.setSelectionRange(0,9999);
+    document.execCommand('copy');
+    document.body.removeChild(tmptextarea);
+
+    completed_box.style.animation = "animation-completed-up 0.5s";
+    completed_box.style.display = "block";
+    setTimeout(function(){completed_box.style.animation = "animation-completed-down 0.2s linear"},3000);
+    setTimeout(function(){completed_box.style.display = "none"},3200);
+}
+
+mailadd.addEventListener("click",copymailaddress);
