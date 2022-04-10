@@ -113,14 +113,9 @@ app.post("/checkspecial", async (req, res) => {
 
   for (i = 0; i <= SPECIALLIST.length; i++) {
     if (SPECIALLIST["#" + (i + 1)] == address) {
-      res.send({
-        result: "true",
-      });
+      console.log(SPECIALLIST["#" + (i + 1)]);
     }
   }
-  res.send({
-    result: "false",
-  });
 });
 
 app.post("/getContract", (req, res) => {
