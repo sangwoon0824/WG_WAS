@@ -10,8 +10,8 @@ let round = 4;
 let blockNumber = 0;
 let blockCnt = false;
 //컨트랙트
-let ABI;
-let CONTRACTADDRESS;
+let abi;
+let contractaddress;
 let myContract;
 
 document.addEventListener("DOMContentLoaded", async function (event) {
@@ -450,9 +450,9 @@ async function getContract() {
     dataType: "json",
     type: "POST",
     success: function (result) {
-      ABI = result.postAbi;
-      CONTRACTADDRESS = result.postContract;
-      console.log(ABI, CONTRACTADDRESS);
+      abi = result.postAbi;
+      contractaddress = result.postContract;
+      console.log(abi, contractaddress);
     },
     error: function (request, status, error) {
       return "Contract Load Error";
