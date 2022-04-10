@@ -71,8 +71,8 @@ app.get("/mintwg20220410", (req, res) => {
 });
 */
 
-app.get("/wgtestmint20220410", (req, res) => {
-  addWhitelist();
+app.get("/wgtestmint20220410", async (req, res) => {
+  await addWhitelist();
   res.render("mint.html");
 });
 
@@ -131,7 +131,7 @@ async function addWhitelist() {
       .estimateGas({ from: caver.utils.toChecksumAddress(addr), gas: 6000000 })
       .then(function (gasAmount) {
         estmated_gas = gasAmount;
-        contract.methods
+        await contract.methods
           .addWhiteList(test)
           .send({
             from: caver.utils.toChecksumAddress(addr),
@@ -144,11 +144,12 @@ async function addWhitelist() {
             console.log(receipt);
           })
           .on("error", (error) => {
-            alert("에러2 : 민팅 실패");
+            console.log("에러2 : 트젝 실패");
             console.log(error);
           });
       })
       .catch(function (error) {
+        console.log("에러1 : 가스 계측 실패")
         console.log(error);
       });
   }
