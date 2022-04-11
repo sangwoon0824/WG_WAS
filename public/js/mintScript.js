@@ -277,7 +277,7 @@ async function publicMint() {
     })
     .catch(function (error) {
       console.log(error);
-      alert("에러1: 가스비 계측 실패");
+      alert("public mint not allow");
     });
   await check_status();
 }
@@ -308,7 +308,7 @@ async function whitelistMint(_inputAddress) {
     })
     .catch(function (error) {
       console.log(error);
-      alert("에러1: 가스비 계측 실패");
+      alert("whitelist mint not allow");
     });
 
   await check_status();
@@ -340,7 +340,7 @@ async function specialMint(_inputAddress) {
     })
     .catch(function (error) {
       console.log(error);
-      alert("에러1 : 가스비 계측 실패");
+      alert("special mint not allow");
     });
 
   await check_status();
