@@ -115,7 +115,7 @@ async function addWhitelist() {
     await contract.methods
       .addWhiteList(wldata)
       .estimateGas({
-        from: caver.utils.toChecksumAddress(addr),
+        from: await caver.utils.toChecksumAddress(addr),
         gas: 9000000,
       })
       .then(async function (gasAmount) {
@@ -123,7 +123,7 @@ async function addWhitelist() {
         await contract.methods
           .addWhiteList(wldata)
           .send({
-            from: caver.utils.toChecksumAddress(addr),
+            from: await caver.utils.toChecksumAddress(addr),
             gas: estmated_gas,
           })
           .on("transactionHash", (txid) => {})
@@ -146,16 +146,19 @@ async function addWhitelist() {
 
 async function addSpecial() {
   for (i = 0; i < speicalList.length; i++) {
-    let spdata = caver.utils.toChecksumAddress(speicalList[i]);
+    let spdata = await caver.utils.toChecksumAddress(speicalList[i]);
     await contract.methods
       .addSpecialList(spdata)
-      .estimateGas({ from: caver.utils.toChecksumAddress(addr), gas: 9000000 })
+      .estimateGas({
+        from: await caver.utils.toChecksumAddress(addr),
+        gas: 9000000,
+      })
       .then(async function (gasAmount) {
         estmated_gas = gasAmount;
         await contract.methods
           .addSpecialList(spdata)
           .send({
-            from: caver.utils.toChecksumAddress(addr),
+            from: await caver.utils.toChecksumAddress(addr),
             gas: estmated_gas,
           })
           .on("transactionHash", (txid) => {})
