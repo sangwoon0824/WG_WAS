@@ -120,14 +120,14 @@ async function check_status() {
         document.getElementById("amount_sign").style.left = "3%";
       }
       document.getElementById("pertransacion").innerHTML =
-        "<p>Per Transacion</p>\n" + `<p>${mintLimitPerBlock}개</p>`;
+        "<p>Per Transacion</p>\n" + `<p>${mintLimitPerBlock}</p>`;
       document.getElementById("mintingstartsat").innerHTML =
         "<p>MINTING STARTS AT</p>\n" + `<p>#${mintStartBlockNumber}</p>`;
       document.getElementById("price").innerHTML =
         "<p>Price</p>\n" +
-        `<p>${caver.utils.fromPeb(mintPrice, "KLAY")}Klay</p>`;
+        `<p>${caver.utils.fromPeb(mintPrice, "KLAY")}</p>`;
       document.getElementById("perwallet").innerHTML =
-        "<p>Per Wallet</p>\n" + `<p>${mintLimitPerSale}개</p>`;
+        "<p>Per Wallet</p>\n" + `<p>${mintLimitPerSale}</p>`;
     })
     .catch(function (error) {
       console.log(error);
