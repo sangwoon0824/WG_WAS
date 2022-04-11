@@ -151,8 +151,10 @@ async function allMint() {
     alert("ERROR: 지갑을 연결해주세요!");
     return;
   }
-  console.log(String(caver.klay.getBalance(account)));
-  accBalance = caver.utils.fromPeb();
+  caver.klay.getBalance(account).then((result) => {
+    accBalance = caver.utils.fromPeb(result, "KLAY");
+  });
+
   console.log(accBalance);
 
   //물약, 블럭, 잔액 필터
@@ -162,7 +164,7 @@ async function allMint() {
   } else if (blockNumber <= mintStartBlockNumber) {
     alert("아직 민팅이 시작되지 않았습니다.");
     return;
-  } else if (mintPrice > accBalance) {
+  } else if (mintPrice > parserInt(accBalance)) {
     alert("지갑 잔액이 부족합니다!");
     return;
   }
