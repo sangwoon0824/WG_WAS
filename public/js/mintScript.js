@@ -39,6 +39,7 @@ function cntBlockNumber() {
       blockNumber += 1;
       document.getElementById("currentblock").innerHTML =
         "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
+      check_status();
     }, 1000);
     blockCnt = true;
   }
@@ -176,10 +177,12 @@ async function check_status() {
     .catch(function (error) {
       console.log(error);
     });
-  blockNumber = await caver.klay.getBlockNumber();
-  document.getElementById("currentblock").innerHTML =
-    "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;
-  cntBlockNumber();
+  if (!blockCnt) {
+    blockNumber = await caver.klay.getBlockNumber();
+    /*document.getElementById("currentblock").innerHTML =
+    "<p>CURRENT BLOCK</p>\n" + `<p>#${blockNumber}</p>`;*/
+    cntBlockNumber();
+  }
 }
 
 async function allMint() {
