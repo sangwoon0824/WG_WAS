@@ -151,6 +151,7 @@ async function allMint() {
     alert("ERROR: 지갑을 연결해주세요!");
     return;
   }
+  let accBalance;
   caver.klay.getBalance(account).then((result) => {
     accBalance = caver.utils.fromPeb(result, "KLAY");
   });
