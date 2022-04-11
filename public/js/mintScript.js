@@ -227,7 +227,7 @@ async function allMint() {
   } else if (mintLimitPerSale <= balanceOfAccount) {
     alert("지갑당 보유량 초과!");
     return;
-  } else if (mintIndexForSale + amount <= maxSaleAmount + 1) {
+  } else if (mintIndexForSale + amount >= maxSaleAmount + 1) {
     alert("최대 물량을 넘어선 민팅입니다!");
     return;
   } else if (amount > mintLimitPerBlock) {
