@@ -106,6 +106,8 @@ async function check_status() {
               document.querySelector("#approval p:last-child").innerHTML =
                 "✅ Approved";
             } else {
+              document.querySelector("#approval p:last-child").style.color =
+                "#94160d";
               document.querySelector("#approval p:last-child").innerHTML =
                 "Not Approved";
             }
@@ -132,6 +134,8 @@ async function check_status() {
               document.querySelector("#approval p:last-child").innerHTML =
                 "✅ Approved";
             } else {
+              document.querySelector("#approval p:last-child").style.color =
+                "#94160d";
               document.querySelector("#approval p:last-child").innerHTML =
                 "Not Approved";
             }
