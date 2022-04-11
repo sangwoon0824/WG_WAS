@@ -151,7 +151,9 @@ async function allMint() {
     alert("ERROR: 지갑을 연결해주세요!");
     return;
   }
-  accBalance = caver.utils.fromPeb(caver.klay.getBalance(account));
+  console.log(caver.klay.getBalance(account));
+  accBalance = caver.utils.fromPeb();
+  console.log(accBalance);
 
   //물약, 블럭, 잔액 필터
   if (maxSaleAmount + 1 <= mintIndexForSale) {
