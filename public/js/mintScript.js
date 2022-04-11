@@ -141,8 +141,8 @@ async function check_status() {
             }
           });
       } else if (round == PUBLIC) {
-        document.querySelector("progress").max = maxSaleAmount - 300;
-        document.querySelector("progress").value = mintIndexForSale - 300;
+        document.querySelector("progress").max = maxSaleAmount;
+        document.querySelector("progress").value = mintIndexForSale;
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>Public</p>";
         document.getElementById("count").innerHTML = `남은 수량 :${
