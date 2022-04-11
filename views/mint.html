@@ -91,7 +91,16 @@
         <form id="mint">
           <p>Amount</p>
           <div id="minus">-</div>
-          <input id="input_amount" type="number" maxlength="2" min="1" max="10" value="1" oninput="maxLengthCheck(this)"/>
+          <input
+            id="input_amount"
+            type="number"
+            maxlength="2"
+            min="1"
+            max="10"
+            value="1"
+            oninput="maxLengthCheck(this)"
+            readonly
+          />
           <div id="plus">+</div>
           <div id="input_submit" onclick="allMint()">MINT</div>
         </form>
