@@ -91,7 +91,7 @@ async function check_status() {
             document.getElementById("approval").style.display = "block";
             document.querySelector("#approval p:first-child").innerHTML =
               "Speical";
-            if (result2 == "true") {
+            if (result2 == true) {
               document.querySelector("#approval p:last-child").style.color =
                 "#1cb80f";
               document.querySelector("#approval p:last-child").innerHTML =
