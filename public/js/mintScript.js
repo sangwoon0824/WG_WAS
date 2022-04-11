@@ -153,12 +153,11 @@ async function allMint() {
     return;
   }
   let accBalance;
-  caver.klay.getBalance(account).then((result) => {
+  await caver.klay.getBalance(account).then((result) => {
     accBalance = parseInt(result);
+    console.log(mintPrice);
+    console.log(mintPrice > accBalance);
   });
-  console.log(mintPrice);
-  console.log(result2);
-  console.log(mintPrice > accBalance);
 
   //물약, 블럭, 잔액 필터
   if (maxSaleAmount + 1 <= mintIndexForSale) {
