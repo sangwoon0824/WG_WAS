@@ -1,6 +1,6 @@
 {
   "contractName": "wgContract",
-  "address": "0x28f5eFa1E24dDC988cD32bd14369459D4AcC6440",
+  "address": "0x780F8809dDDE42139a33c0720070872c5ed5c7B7",
   "abi": [
     {
       "constant": false,
@@ -168,21 +168,6 @@
       ],
       "name": "ApprovalForAll",
       "type": "event"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenId",
-          "type": "uint256"
-        }
-      ],
-      "name": "burn",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
     },
     {
       "constant": false,
@@ -489,11 +474,21 @@
       "inputs": [
         {
           "internalType": "bool",
-          "name": "_state",
+          "name": "_state1",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "_state2",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "_state3",
           "type": "bool"
         }
       ],
-      "name": "setPublicMintEnabled",
+      "name": "setMintEnabled",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -509,21 +504,6 @@
         }
       ],
       "name": "setRound",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "bool",
-          "name": "_state",
-          "type": "bool"
-        }
-      ],
-      "name": "setSpecialListMintEnabled",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -589,21 +569,6 @@
         }
       ],
       "name": "setURI",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "bool",
-          "name": "_state",
-          "type": "bool"
-        }
-      ],
-      "name": "setWhitelistMintEnabled",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -1067,6 +1032,21 @@
     },
     {
       "constant": true,
+      "inputs": [],
+      "name": "specialListMintEnabled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
       "inputs": [
         {
           "internalType": "bytes4",
@@ -1178,6 +1158,21 @@
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "whitelistMintEnabled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
         }
       ],
       "payable": false,
