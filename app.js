@@ -71,13 +71,20 @@ app.get("/mintwg20220410", (req, res) => {
 });
 */
 
-app.get("/wgtestmint20220410", async (req, res) => {
-  //await addWhitelist();
+app.get("/wgtestmint20220410", (req, res) => {
   res.render("mint.html");
 });
 
 app.get("/not-support-this-browser", (req, res) => {
   res.sendFile(__dirname + "/public/not-support-this-browser.html");
+});
+app.get("/addwl", async (req, res) => {
+  await addWhitelist();
+  res.send("<script>alert('화리 추가 완료');</script>");
+});
+app.get("/addsp", async (req, res) => {
+  await addSpecial();
+  res.send("<script>alert('스페셜 추가 완료');</script>");
 });
 
 app.post("/getContract", (req, res) => {

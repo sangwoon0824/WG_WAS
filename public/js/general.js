@@ -1,3 +1,4 @@
+/*
 if (
   document.querySelector("progress").value /
     (document.querySelector("progress").max / 85) >
@@ -10,7 +11,7 @@ if (
 } else {
   document.getElementById("amount_sign").style.left = "3%";
 }
-
+*/
 document.getElementById("minus").addEventListener("click", function () {
   if (document.getElementById("input_amount").value > 1)
     document.getElementById("input_amount").value =
@@ -32,8 +33,8 @@ function fadenone() {
 function bgchange() {
   document.getElementById("bg").src =
     "img/background/" + (Math.floor(Math.random() * 24) + 1) + ".png";
-  setTimeout(fadeio, 9500);
-  setTimeout(bgchange, 10000);
-  setTimeout(fadenone, 10500);
+  setTimeout(fadeio, 2500);
+  setTimeout(bgchange, 3000);
+  setTimeout(fadenone, 3500);
 }
 bgchange();
