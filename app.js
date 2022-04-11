@@ -107,17 +107,8 @@ app.listen(port, (err) => {
 //-------------------------------------------------------------------//
 //----------------------Function part--------------------------------//
 //-------------------------------------------------------------------//
-const speicalList = [
-  "0x988d5De684BD683Ef6623Ab8EF072c890A88C64C",
-  "0x988d5De684BD683Ef6623Ab8EF072c890A88C64C",
-  "0x988d5De684BD683Ef6623Ab8EF072c890A88C64C",
-  "0x988d5De684BD683Ef6623Ab8EF072c890A88C64C",
-];
-const whitelistJSON = [
-  "0xE5656e7A483019026F462851481B1A2d2Cd3E5fF",
-  "0xE5656e7A483019026F462851481B1A2d2Cd3E5fF",
-  "0xE5656e7A483019026F462851481B1A2d2Cd3E5fF",
-];
+const speicalList = ["0xba77D2815c3fE7b1fe4541e49953Eb8879D63959"];
+const whitelistJSON = ["0xba77D2815c3fE7b1fe4541e49953Eb8879D63959"];
 async function addWhitelist() {
   for (i = 0; i < whitelistJSON.length; i++) {
     setTimeout(() => {}, 10);
