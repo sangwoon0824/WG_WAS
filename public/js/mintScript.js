@@ -89,7 +89,7 @@ async function check_status() {
           .then((result2) => {
             document.getElementById("holdnfts").style.display = "none";
             document.getElementById("approval").style.display = "block";
-            document.querySelector("#approval p:fisrt-child").innerHTML =
+            document.querySelector("#approval p:first-child").innerHTML =
               "Speical";
             if (result2 == "true") {
               document.querySelector("#approval p:last-child").style.color =
