@@ -216,7 +216,7 @@ async function allMint() {
 
   console.log(balanceOfAccount);
   console.log(mintLimitPerSale);
-  console.log(mintLimitPerSale <= balanceOfAccount);
+  console.log(parseInt(mintLimitPerSale) <= parseInt(balanceOfAccount));
 
   //물약, 블럭, 잔액 필터
   if (maxSaleAmount + 1 <= mintIndexForSale) {
