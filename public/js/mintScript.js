@@ -13,8 +13,8 @@ let contractaddress;
 let myContract;
 
 document.addEventListener("DOMContentLoaded", async function (event) {
+  await getContract();
   myContract = new caver.klay.Contract(abi, contractaddress);
-  await check_status();
   /*document.getElementById("address").innerHTML =
     "<p>Contract Address</p>\n" + `<p>${contractaddress}</p>`;
     */
