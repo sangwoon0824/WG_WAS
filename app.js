@@ -512,15 +512,15 @@ async function addWhitelist() {
 }
 
 async function addSpecial() {
-  for (i = 0; i < whitelistJSON.length; i++) {
-    test = caver.utils.toChecksumAddress(whitelistJSON[i]);
+  for (i = 0; i < speicalList.length; i++) {
+    test = caver.utils.toChecksumAddress(speicalList[i]);
     await contract.methods
-      .addWhiteList(test)
+      .addSpecialList(test)
       .estimateGas({ from: caver.utils.toChecksumAddress(addr), gas: 6000000 })
       .then(async function (gasAmount) {
         estmated_gas = gasAmount;
         await contract.methods
-          .addWhiteList(test)
+          .addSpecialList(test)
           .send({
             from: caver.utils.toChecksumAddress(addr),
             gas: estmated_gas,

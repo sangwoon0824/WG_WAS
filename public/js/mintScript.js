@@ -148,12 +148,17 @@ async function check_status() {
         document.getElementById("holdnfts").style.display = "block";
         document.querySelector("#holdnfts p:last-child").innerHTML =
           String(balanceOfAccount);
+      } else {
         document.querySelector("progress").max = maxSaleAmount;
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>None</p>";
         document.getElementById("count").innerHTML = `남은 수량 :${
           maxSaleAmount - (mintIndexForSale - 1)
         }`;
+        document.getElementById("approval").style.display = "none";
+        document.getElementById("holdnfts").style.display = "block";
+        document.querySelector("#holdnfts p:last-child").innerHTML =
+          String(balanceOfAccount);
       }
       if (
         document.querySelector("progress").value /
