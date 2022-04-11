@@ -11,6 +11,7 @@ let blockCnt = false;
 let abi;
 let contractaddress;
 let myContract;
+let balanceOfAccount;
 
 document.addEventListener("DOMContentLoaded", async function (event) {
   await getContract();
@@ -65,6 +66,13 @@ async function check_status() {
   const PUBLIC = 2;
   const WHITELIST = 1;
   const SPECIAL = 0;
+  await myContract.methods
+    .balanceOf(account)
+    .call()
+    .then((result2) => {
+      balanceOfAccount = parseInt(result2);
+    });
+
   await myContract.methods
     .mintingInformation()
     .call()
@@ -136,16 +144,10 @@ async function check_status() {
         document.getElementById("count").innerHTML = `남은 수량 :${
           maxSaleAmount - (mintIndexForSale - 1)
         }`;
-        await myContract.methods
-          .balanceOf(account)
-          .call()
-          .then((result2) => {
-            document.getElementById("approval").style.display = "none";
-            document.getElementById("holdnfts").style.display = "block";
-            document.querySelector("#holdnfts p:last-child").innerHTML =
-              result2;
-          });
-      } else {
+        document.getElementById("approval").style.display = "none";
+        document.getElementById("holdnfts").style.display = "block";
+        document.querySelector("#holdnfts p:last-child").innerHTML =
+          String(balanceOfAccount);
         document.querySelector("progress").max = maxSaleAmount;
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>None</p>";
@@ -215,6 +217,9 @@ async function allMint() {
     return;
   } else if (mintPrice > accBalance) {
     alert("지갑 잔액이 부족합니다!");
+    return;
+  } else if (mintLimitPerSale < balanceOfAccount) {
+    alert("지갑당 보유량 초과!");
     return;
   }
   // 라운드 필터
