@@ -14,6 +14,7 @@ let myContract;
 
 document.addEventListener("DOMContentLoaded", async function (event) {
   await getContract();
+  await check_status();
   myContract = new caver.klay.Contract(abi, contractaddress);
   /*document.getElementById("address").innerHTML =
     "<p>Contract Address</p>\n" + `<p>${contractaddress}</p>`;
@@ -124,8 +125,7 @@ async function check_status() {
       document.getElementById("mintingstartsat").innerHTML =
         "<p>MINTING STARTS AT</p>\n" + `<p>#${mintStartBlockNumber}</p>`;
       document.getElementById("price").innerHTML =
-        "<p>Price</p>\n" +
-        `<p>${caver.utils.fromPeb(mintPrice, "KLAY")}</p>`;
+        "<p>Price</p>\n" + `<p>${caver.utils.fromPeb(mintPrice, "KLAY")}</p>`;
       document.getElementById("perwallet").innerHTML =
         "<p>Per Wallet</p>\n" + `<p>${mintLimitPerSale}</p>`;
     })
