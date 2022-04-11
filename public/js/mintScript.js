@@ -213,7 +213,7 @@ async function allMint() {
     console.log(mintPrice > accBalance);
   });
   let amount = document.getElementById("input_amount").value;
-  console.log(mintIndexForSale + amount);
+  console.log(parseInt(mintIndexForSale) + parseInt(amount));
 
   //물약, 블럭, 잔액 필터
   if (maxSaleAmount + 1 <= mintIndexForSale) {
@@ -228,7 +228,10 @@ async function allMint() {
   } else if (mintLimitPerSale <= balanceOfAccount) {
     alert("지갑당 보유량 초과!");
     return;
-  } else if (maxSaleAmount + 1 <= mintIndexForSale + amount) {
+  } else if (
+    maxSaleAmount + 1 <=
+    parseInt(mintIndexForSale) + parseInt(amount)
+  ) {
     alert("최대 물량을 넘어선 민팅입니다!");
     return;
   } else if (amount > mintLimitPerBlock) {
