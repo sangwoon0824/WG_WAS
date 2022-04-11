@@ -229,7 +229,7 @@ async function allMint() {
     alert("지갑당 보유량 초과!");
     return;
   } else if (
-    maxSaleAmount + 1 <=
+    maxSaleAmount + 1 <
     parseInt(mintIndexForSale) + parseInt(amount)
   ) {
     alert("최대 물량을 넘어선 민팅입니다!");
