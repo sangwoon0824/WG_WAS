@@ -234,7 +234,7 @@ async function allMint() {
   ) {
     alert("최대 물량을 넘어선 민팅입니다!");
     return;
-  } else if (amount > mintLimitPerBlock) {
+  } else if (parseInt(amount) > mintLimitPerBlock) {
     alert("트랜잭션당 제한 : " + String(mintLimitPerBlock) + "개");
     return;
   }
