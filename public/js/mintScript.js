@@ -15,8 +15,9 @@ let myContract;
 document.addEventListener("DOMContentLoaded", async function (event) {
   await getContract();
   myContract = new caver.klay.Contract(abi, contractaddress);
-  document.getElementById("address").innerHTML =
+  /*document.getElementById("address").innerHTML =
     "<p>Contract Address</p>\n" + `<p>${contractaddress}</p>`;
+    */
   try {
     const accounts = await klaytn.enable();
     if (!accounts) {
@@ -153,7 +154,7 @@ async function allMint() {
   }
   let accBalance;
   caver.klay.getBalance(account).then((result) => {
-    console.log(typeof caver.utils.fromPeb(result, "KLAY"));
+    console.log(typeof parserInt(caver.utils.fromPeb(result, "KLAY")));
   });
 
   //console.log(accBalance);
