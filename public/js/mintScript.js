@@ -116,7 +116,7 @@ async function check_status() {
             document.getElementById("holdnfts").style.display = "none";
             document.getElementById("approval").style.display = "block";
             document.querySelector("#approval p:first-child").innerHTML =
-              "Speical";
+              "WhiteList";
             if (result2 == true) {
               document.querySelector("#approval p:last-child").style.color =
                 "#1cb80f";

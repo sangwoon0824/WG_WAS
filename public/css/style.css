@@ -406,6 +406,7 @@ button:focus {
   right: 45px;
   text-align: center;
   cursor: pointer;
+  user-select: none;
 }
 #mint-box form #input_submit:hover {
   background-color: #ff8091;
