@@ -80,15 +80,27 @@ async function check_status() {
         document.querySelector("progress").value = mintIndexForSale;
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>Special</p>";
-        document.getElementById("count").innerHTML = `남은수량:${
+        document.getElementById("count").innerHTML = `남은 수량 :${
           maxSaleAmount - (mintIndexForSale - 1)
         }`;
+        await myContract.methods.isSpecialList(account).then((result2)=> {
+          document.getElementById("holdnfts").style.display = "none";
+          document.getElementById("approval").style.display = "block";
+          document.querySelector("#approval p:fisrt-child").innerHTML = "Speical";
+          if (result2=="true"){
+            document.querySelector("#approval p:last-child").style.color = "#1cb80f";
+            document.querySelector("#approval p:last-child").innerHTML = "✅ Approved";     
+          } else {
+            document.querySelector("#approval p:last-child").innerHTML = "Not Approved";
+          }
+          
+        })
       } else if (round == WHITELIST) {
         document.querySelector("progress").max = maxSaleAmount - 20;
         document.querySelector("progress").value = mintIndexForSale - 20;
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>Whitelist</p>";
-        document.getElementById("count").innerHTML = `남은수량:${
+        document.getElementById("count").innerHTML = `남은 수량 :${
           maxSaleAmount - (mintIndexForSale - 1)
         }`;
       } else if (round == PUBLIC) {
@@ -96,14 +108,20 @@ async function check_status() {
         document.querySelector("progress").value = mintIndexForSale - 300;
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>Public</p>";
-        document.getElementById("count").innerHTML = `남은수량:${
+        document.getElementById("count").innerHTML = `남은 수량 :${
           maxSaleAmount - (mintIndexForSale - 1)
         }`;
+        await myContract.methods.balanceOf(account).then((result2)=> {
+          document.getElementById("approval").style.display = "none";
+          document.getElementById("holdnfts").style.display = "block";
+          document.querySelector("#holdnfts p:last-child").innerHTML = result2;
+        })
+        
       } else {
         document.querySelector("progress").max = maxSaleAmount;
         document.getElementById("round").innerHTML =
           "<p>Round</p>\n" + "<p>None</p>";
-        document.getElementById("count").innerHTML = `남은수량:${
+        document.getElementById("count").innerHTML = `남은 수량 :${
           maxSaleAmount - (mintIndexForSale - 1)
         }`;
       }
