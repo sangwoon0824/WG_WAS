@@ -154,7 +154,7 @@ async function allMint() {
   }
   let accBalance;
   caver.klay.getBalance(account).then((result) => {
-    console.log(typeof parseInt(caver.utils.fromPeb(result, "KLAY")));
+    accBalance = parseInt(caver.utils.fromPeb(result, "KLAY"));
   });
 
   //console.log(accBalance);
@@ -166,7 +166,7 @@ async function allMint() {
   } else if (blockNumber <= mintStartBlockNumber) {
     alert("아직 민팅이 시작되지 않았습니다.");
     return;
-  } else if (mintPrice > parserInt(accBalance)) {
+  } else if (mintPrice > accBalance) {
     alert("지갑 잔액이 부족합니다!");
     return;
   }
