@@ -156,8 +156,9 @@ async function allMint() {
   caver.klay.getBalance(account).then((result) => {
     accBalance = parseInt(caver.utils.fromPeb(result, "KLAY"));
   });
-
-  //console.log(accBalance);
+  console.log(mintPrice);
+  console.log(accBalance);
+  console.log(mintPrice > accBalance);
 
   //물약, 블럭, 잔액 필터
   if (maxSaleAmount + 1 <= mintIndexForSale) {
