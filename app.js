@@ -52,7 +52,7 @@ app.get("/", (req, res) => {
 
 app.get("/metadata/:id", (req, res) => {
   let id = req.params.id;
-  if (id > 0) {
+  if (id > 1000) {
     res.send(
       "<script>alert('발행되지않은 토큰입니다');</script>\n" +
         "<div>non-existent token ID</div>"
