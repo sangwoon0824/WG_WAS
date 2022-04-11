@@ -124,7 +124,7 @@ async function addWhitelist() {
     test = caver.utils.toChecksumAddress(whitelistJSON[i]);
     await contract.methods
       .addWhiteList(test)
-      .estimateGas({ from: caver.utils.toChecksumAddress(addr), gas: 6000000 })
+      .estimateGas({ from: caver.utils.toChecksumAddress(addr), gas: 9999999 })
       .then(async function (gasAmount) {
         estmated_gas = gasAmount;
         await contract.methods
