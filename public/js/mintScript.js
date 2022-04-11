@@ -213,7 +213,10 @@ async function allMint() {
     console.log(mintPrice > accBalance);
   });
   let amount = document.getElementById("input_amount").value;
-  console.log(parseInt(mintIndexForSale) + parseInt(amount));
+
+  console.log(balanceOfAccount);
+  console.log(mintLimitPerSale);
+  console.log(mintLimitPerSale <= balanceOfAccount);
 
   //물약, 블럭, 잔액 필터
   if (maxSaleAmount + 1 <= mintIndexForSale) {
