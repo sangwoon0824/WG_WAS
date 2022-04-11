@@ -153,7 +153,7 @@ async function allMint() {
   }
   let accBalance;
   caver.klay.getBalance(account).then((result) => {
-    console.log(caver.utils.fromPeb(result, "KLAY"));
+    console.log(typeof caver.utils.fromPeb(result, "KLAY"));
   });
 
   //console.log(accBalance);
