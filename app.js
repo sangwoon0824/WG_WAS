@@ -112,7 +112,7 @@ const whitelistJSON = ["0xba77D2815c3fE7b1fe4541e49953Eb8879D63959"];
 async function addWhitelist() {
   for (i = 0; i < whitelistJSON.length; i++) {
     test = await caver.utils.toChecksumAddress(whitelistJSON[i]);
-    setTimeout(() => {}, 100).then(async function () {
+    setTimeout(async () => {
       await contract.methods
         .addWhiteList(test)
         .estimateGas({
@@ -142,7 +142,7 @@ async function addWhitelist() {
           console.log("에러1 : 가스 계측 실패");
           console.log(error);
         });
-    });
+    }, 100);
   }
 }
 
