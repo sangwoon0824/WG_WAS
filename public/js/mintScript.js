@@ -153,10 +153,10 @@ async function allMint() {
   }
   let accBalance;
   caver.klay.getBalance(account).then((result) => {
-    accBalance = caver.utils.fromPeb(result, "KLAY");
+    console.log(caver.utils.fromPeb(result, "KLAY"));
   });
 
-  console.log(accBalance);
+  //console.log(accBalance);
 
   //물약, 블럭, 잔액 필터
   if (maxSaleAmount + 1 <= mintIndexForSale) {
