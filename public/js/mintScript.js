@@ -223,7 +223,7 @@ async function allMint() {
   } else if (mintPrice > accBalance) {
     alert("지갑 잔액이 부족합니다!");
     return;
-  } else if (mintLimitPerSale < balanceOfAccount) {
+  } else if (mintLimitPerSale <= balanceOfAccount) {
     alert("지갑당 보유량 초과!");
     return;
   }
