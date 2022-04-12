@@ -104,6 +104,86 @@ a{
 .stickers:hover img{
     transform:scale(1.1) !important;
 }
+
+/* 사과문 */
+#sorry{
+    position:relative;
+    width:100%;
+    height:100%;
+    background: no-repeat url('../_img/about/background-mobile.png');
+    margin-bottom:-50px;
+}
+#sorry img:first-child{
+    width:210px;
+    padding-top:40px;
+    display:block;
+    margin:0 auto;
+}
+#sorry #ceo{
+    display:block;
+    font-family:'Goyang';
+    color:white;
+    font-weight:bold;
+    padding-top:20px;
+    margin:0 auto;
+    top:265px;
+    text-align:center;
+    font-size:3em;
+    line-height:1em;
+}
+#sorry button{
+    background:#e9ed00;
+    width:310px;
+    height:65px;
+    font-size:19pt;
+    font-family:'Goyang';
+    font-weight:bold;
+    border-radius:35px;
+    display:block;
+    margin:0 auto;
+    margin-top:50px;
+}
+#sorry button:hover{
+    cursor:url('_cursor/cursor-rainbow.png'),auto;
+    background:#999c00;
+}
+#sorry #sagwamun{
+    position:relative;
+    background:#ffffff;
+    display:block;
+    width:800px;
+    margin:0 auto;
+    margin-top:70px;
+    border-radius:45px;
+}
+#sorry #sagwamun p{
+    text-align:center;
+    font-weight:bold;
+}
+#sorry #sagwamun p:first-child{
+    font-size:28pt;
+    font-family:'Goyang';
+    padding-top:20px;
+}
+#sorry #sagwamun p:nth-child(2){
+    font-size:15pt;
+    font-family:'Goyang';
+    padding-top:60px;
+    line-height:40pt;
+}
+#sorry #sagwamun > img{
+    position:absolute;
+    bottom:20px;
+    right:30px;
+    opacity:0.8;
+}
+#sorry #sorrycr{
+    font-family:'NanumGothic';
+    color:#ffffff;
+    padding-top:100px;
+    margin:0 auto;
+    text-align:center;
+}
 /* 네비게이션 설정 */
 nav{
     position:absolute;

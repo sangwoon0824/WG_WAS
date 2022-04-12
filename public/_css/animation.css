@@ -56,6 +56,11 @@
     100%{bottom:-50px;}
 }
 
+@keyframes sorry{
+    0%{margin-left:0%;}
+    100%{margin-left:-100%;}
+}
+
 /* Scroll Animation */
 .scrollop0{
     opacity:0;
