@@ -50,7 +50,7 @@ app.get("/", (req, res) => {
   res.render("index.html");
 });
 
-app.get("/metadata/:id", (req, res) => {
+app.get("/meatadata/:id", (req, res) => {
   let id = req.params.id;
   if (id > 1000) {
     res.send(
