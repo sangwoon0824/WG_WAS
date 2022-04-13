@@ -1,0 +1,15 @@
+{
+  "tokenID": 994,
+  "name": "WeatherGirls #994",
+  "description": "WeatherGirls NFT is the art of girls' journey for lost weather",
+  "image": "https://klayweathergirls.mypinata.cloud/ipfs/QmPpbXMURLnrtSHuMCe2fW5RULPLwfKmbfpKDcGTkGAfti",
+  "attributes": [
+    { "trait_type": "background", "value": "pink_background" },
+    { "trait_type": "body", "value": "blush" },
+    { "trait_type": "hair", "value": "straight_skyblue_hair" },
+    { "trait_type": "clothes", "value": "maid_dress" },
+    { "trait_type": "mouth", "value": "smile" },
+    { "trait_type": "eye", "value": "shock" },
+    { "trait_type": "accessories", "value": "fish" }
+  ]
+}
