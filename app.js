@@ -27,7 +27,7 @@ const acc = caver.klay.accounts.wallet.getAccount(0);
 
 //const networkID = "1001";
 const networkID = "8217";
-const contract = new caver.klay.Contract(CONTRACT.abi, CONTRACT.address);\
+const contract = new caver.klay.Contract(CONTRACT.abi, CONTRACT.address);
 
 let userCountMint;
 let userCountMain;
@@ -73,7 +73,12 @@ app.get("/", (req, res) => {
 app.get("/count", (req, res) => {
   console.log(userCountMint);
   console.log(userCountMain);
-  var data = "메인 웹 접속 횟수 : " +String(userCountMain)+"\n"+ "민팅 웹 접속 횟수 : " + String(userCountMint);
+  var data =
+    "메인 웹 접속 횟수 : " +
+    String(userCountMain) +
+    "\n" +
+    "민팅 웹 접속 횟수 : " +
+    String(userCountMint);
   fs.writeFile("userCount.txt", data, "utf8", function (error) {
     console.log("write end");
   });
