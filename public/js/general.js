@@ -19,7 +19,7 @@ document.getElementById("minus").addEventListener("click", function () {
 });
 
 document.getElementById("plus").addEventListener("click", function () {
-  if (document.getElementById("input_amount").value < 10)
+  if (document.getElementById("input_amount").value < 5)
     document.getElementById("input_amount").value =
       parseInt(document.getElementById("input_amount").value) + 1;
 });
