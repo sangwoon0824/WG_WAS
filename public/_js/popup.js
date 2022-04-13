@@ -1,0 +1,2 @@
+document.querySelector(".ann1 .fa-xmark").addEventListener("click",function(){document.querySelector(".ann1").style.display = "none";});
+document.querySelector(".ann2 .fa-xmark").addEventListener("click",function(){document.querySelector(".ann2").style.display = "none";});

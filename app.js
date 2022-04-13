@@ -65,26 +65,13 @@ app.get("/meatadata/:id", (req, res) => {
 app.get("/", (req, res) => {
   res.render("index.html");
 });
-/*
-app.get("/mintwg20220410", (req, res) => {
-  res.render("mint.html");
-});
-*/
 
-app.get("/wgtestmint20220411", (req, res) => {
+app.get("/mintwg20220413", (req, res) => {
   res.render("mint.html");
 });
 
 app.get("/not-support-this-browser", (req, res) => {
   res.sendFile(__dirname + "/public/not-support-this-browser.html");
-});
-app.get("/addwl", async (req, res) => {
-  await addWhitelist();
-  res.send("<script>alert('화리 추가 완료');</script>");
-});
-app.get("/addsp", async (req, res) => {
-  await addSpecial();
-  res.send("<script>alert('스페셜 추가 완료');</script>");
 });
 
 app.post("/getContract", (req, res) => {
@@ -107,74 +94,3 @@ app.listen(port, (err) => {
 //-------------------------------------------------------------------//
 //----------------------Function part--------------------------------//
 //-------------------------------------------------------------------//
-const speicalList = ["0xba77D2815c3fE7b1fe4541e49953Eb8879D63959"];
-const whitelistJSON = ["0xba77D2815c3fE7b1fe4541e49953Eb8879D63959"];
-async function addWhitelist() {
-  for (i = 0; i < whitelistJSON.length; i++) {
-    let wldata = await caver.utils.toChecksumAddress(whitelistJSON[i]);
-    await contract.methods
-      .addWhiteList(wldata)
-      .estimateGas({
-        from: await caver.utils.toChecksumAddress(addr),
-        gas: 9000000,
-      })
-      .then(async function (gasAmount) {
-        estmated_gas = gasAmount;
-        await contract.methods
-          .addWhiteList(wldata)
-          .send({
-            from: await caver.utils.toChecksumAddress(addr),
-            gas: estmated_gas,
-          })
-          .on("transactionHash", (txid) => {})
-          .once("allEvents", (allEvents) => {})
-          .once("Transfer", (transferEvent) => {})
-          .once("receipt", (receipt) => {
-            console.log(receipt);
-          })
-          .on("error", (error) => {
-            console.log("에러2 : 트젝 실패");
-            console.log(error);
-          });
-      })
-      .catch(function (error) {
-        console.log("에러1 : 가스 계측 실패");
-        console.log(error);
-      });
-  }
-}
-
-async function addSpecial() {
-  for (i = 0; i < speicalList.length; i++) {
-    let spdata = await caver.utils.toChecksumAddress(speicalList[i]);
-    await contract.methods
-      .addSpecialList(spdata)
-      .estimateGas({
-        from: await caver.utils.toChecksumAddress(addr),
-        gas: 9000000,
-      })
-      .then(async function (gasAmount) {
-        estmated_gas = gasAmount;
-        await contract.methods
-          .addSpecialList(spdata)
-          .send({
-            from: await caver.utils.toChecksumAddress(addr),
-            gas: estmated_gas,
-          })
-          .on("transactionHash", (txid) => {})
-          .once("allEvents", (allEvents) => {})
-          .once("Transfer", (transferEvent) => {})
-          .once("receipt", (receipt) => {
-            console.log(receipt);
-          })
-          .on("error", (error) => {
-            console.log("에러2 : 트젝 실패");
-            console.log(error);
-          });
-      })
-      .catch(function (error) {
-        console.log("에러1 : 가스 계측 실패");
-        console.log(error);
-      });
-  }
-}
