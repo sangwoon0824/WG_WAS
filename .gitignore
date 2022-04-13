@@ -1,5 +1,10 @@
 node_modules/
 ./node_modules
 WG_workspace.code-workspace
-web/
-./web
+public/
+./public
+views/
+./views
+userCount.txt
+json/
+./json
