@@ -28,6 +28,7 @@ const acc = caver.klay.accounts.wallet.getAccount(0);
 //const networkID = "1001";
 const networkID = "8217";
 const contract = new caver.klay.Contract(CONTRACT.abi, CONTRACT.address);
+let userCount;
 
 //hide backend engine
 app.disable("x-powered-by");
@@ -67,6 +68,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/mintwg20220413", (req, res) => {
+  userCount++;
   res.render("mint.html");
 });
 
