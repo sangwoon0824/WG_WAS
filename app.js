@@ -29,8 +29,8 @@ const acc = caver.klay.accounts.wallet.getAccount(0);
 const networkID = "8217";
 const contract = new caver.klay.Contract(CONTRACT.abi, CONTRACT.address);
 
-let userCountMint;
-let userCountMain;
+let userCountMint = 0;
+let userCountMain = 0;
 
 //hide backend engine
 app.disable("x-powered-by");
