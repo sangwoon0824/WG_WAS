@@ -84,11 +84,12 @@ app.get("/count", (req, res) => {
   });
 });
 
+/*
 app.get("/mintwg20220413", (req, res) => {
   userCountMint++;
   res.render("WG_MINT.html");
 });
-
+*/
 app.get("/not-support-this-browser", (req, res) => {
   res.sendFile(__dirname + "/public/not-support-this-browser.html");
 });
