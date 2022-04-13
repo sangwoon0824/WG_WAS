@@ -39,7 +39,7 @@ app.disable("x-powered-by");
 app.use(
   limit({
     windowMs: 1 * 60 * 1000,
-    max: 5000,
+    max: 10000,
   })
 );
 
