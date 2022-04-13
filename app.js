@@ -86,7 +86,7 @@ app.get("/count", (req, res) => {
 
 app.get("/mintwg20220413", (req, res) => {
   userCountMint++;
-  res.render("mint.html");
+  res.render("WG_MINT.html");
 });
 
 app.get("/not-support-this-browser", (req, res) => {
