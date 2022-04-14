@@ -85,7 +85,7 @@ app.get("/count", (req, res) => {
 });
 
 /*
-app.get("/mintwg20220413", (req, res) => {
+app.get("/lastwgmint", (req, res) => {
   userCountMint++;
   res.render("WG_MINT.html");
 });
