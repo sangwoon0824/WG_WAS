@@ -1,0 +1,5 @@
+node_modules/
+WG_workspace.code-workspace
+public/
+views/
+userCount.txt
