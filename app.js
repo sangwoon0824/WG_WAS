@@ -90,6 +90,11 @@ app.get("/lastwgmint", (req, res) => {
   res.render("WG_MINT.html");
 });
 */
+
+app.get("/pfp", (req, res) => {
+  res.render("WG_PFP.html");
+});
+
 app.get("/not-support-this-browser", (req, res) => {
   res.sendFile(__dirname + "/public/not-support-this-browser.html");
 });
