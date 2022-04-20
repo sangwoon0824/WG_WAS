@@ -55,7 +55,7 @@ app.get("/", (req, res) => {
 
 app.get("/meatadata/:id", (req, res) => {
   let id = req.params.id;
-  if (id > 3600) {
+  if (id > 4965) {
     res.send(
       "<script>alert('발행되지않은 토큰입니다');</script>\n" +
         "<div>non-existent token ID</div>"
