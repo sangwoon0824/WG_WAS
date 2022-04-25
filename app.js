@@ -53,9 +53,10 @@ app.get("/", (req, res) => {
   res.render("index.html");
 });
 
-app.get("/meatadata/:id", (req, res) => {
+app.get("/meatadata/:id", async (req, res) => {
+  let maxTokenId = await checkTokenId();
   let id = req.params.id;
-  if (id > 4966) {
+  if (id > parseInt(maxTokenId) + 1) {
     res.send(
       "<script>alert('발행되지않은 토큰입니다');</script>\n" +
         "<div>non-existent token ID</div>"
@@ -108,15 +109,18 @@ app.listen(port, (err) => {
 //-------------------------------------------------------------------//
 
 async function checkTokenId() {
+  var data;
   await contract.methods
     .totalSupply()
     .call()
     .then(async function (result) {
       console.log(result);
       console.log(typeof result);
+      data = result;
     })
     .catch(function (error) {
       console.log("조회 실패");
       console.log(error);
     });
+  return data;
 }
