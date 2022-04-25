@@ -79,8 +79,7 @@ app.get("/lastwgmint", (req, res) => {
 */
 
 app.get("/pfp", async (req, res) => {
-  await checkTokenId();
-  //res.render("WG_PFP.html");
+  res.render("WG_PFP.html");
 });
 
 app.get("/not-support-this-browser", (req, res) => {
