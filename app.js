@@ -71,12 +71,10 @@ app.get("/", (req, res) => {
   res.render("index.html");
 });
 
-/*
-app.get("/lastwgmint", (req, res) => {
+app.get("/testwgmint", (req, res) => {
   userCountMint++;
   res.render("WG_MINT.html");
 });
-*/
 
 app.get("/pfp", async (req, res) => {
   res.render("WG_PFP.html");
