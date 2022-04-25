@@ -3,3 +3,6 @@ WG_workspace.code-workspace
 public/
 views/
 userCount.txt
+build/
+dataset/
+json/

@@ -55,7 +55,7 @@ app.get("/", (req, res) => {
 
 app.get("/meatadata/:id", (req, res) => {
   let id = req.params.id;
-  if (id > 4965) {
+  if (id > 4966) {
     res.send(
       "<script>alert('발행되지않은 토큰입니다');</script>\n" +
         "<div>non-existent token ID</div>"
@@ -70,20 +70,6 @@ app.get("/", (req, res) => {
   res.render("index.html");
 });
 
-app.get("/count", (req, res) => {
-  console.log(userCountMint);
-  console.log(userCountMain);
-  var data =
-    "메인 웹 접속 횟수 : " +
-    String(userCountMain) +
-    "\n" +
-    "민팅 웹 접속 횟수 : " +
-    String(userCountMint);
-  fs.writeFile("userCount.txt", data, "utf8", function (error) {
-    console.log("write end");
-  });
-});
-
 /*
 app.get("/lastwgmint", (req, res) => {
   userCountMint++;
@@ -91,8 +77,9 @@ app.get("/lastwgmint", (req, res) => {
 });
 */
 
-app.get("/pfp", (req, res) => {
-  res.render("WG_PFP.html");
+app.get("/pfp", async (req, res) => {
+  await checkTokenId();
+  //res.render("WG_PFP.html");
 });
 
 app.get("/not-support-this-browser", (req, res) => {
@@ -119,3 +106,17 @@ app.listen(port, (err) => {
 //-------------------------------------------------------------------//
 //----------------------Function part--------------------------------//
 //-------------------------------------------------------------------//
+
+async function checkTokenId() {
+  await contract.methods
+    .totalSupply()
+    .call()
+    .then(async function (result) {
+      console.log(result);
+      console.log(typeof result);
+    })
+    .catch(function (error) {
+      console.log("조회 실패");
+      console.log(error);
+    });
+}
