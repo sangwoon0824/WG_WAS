@@ -72,12 +72,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/testwgmint", (req, res) => {
-  userCountMint++;
   res.render("WG_MINT.html");
 });
 
-app.get("/pfp", async (req, res) => {
-  res.render("WG_PFP.html");
+app.get("/storyairdrop", async (req, res) => {
+  res.render("WG_STORY.html");
 });
 
 app.get("/not-support-this-browser", (req, res) => {
