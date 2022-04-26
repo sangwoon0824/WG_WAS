@@ -6,7 +6,8 @@ const router = express.Router();
 const limit = require("express-rate-limit");
 const fs = require("fs");
 const Caver = require("caver-js");
-const CONTRACT = require("./build/wgContract.json");
+const V1_CONTRACT = require("./build/v1_contract.json");
+const STORY_CONTRACT = require("./build/story_contract.json");
 const { pkey, addr } = require("./dataset/secret.js");
 
 const bodyParser = require("body-parser");
@@ -27,10 +28,15 @@ const acc = caver.klay.accounts.wallet.getAccount(0);
 
 //const networkID = "1001";
 const networkID = "8217";
-const contract = new caver.klay.Contract(CONTRACT.abi, CONTRACT.address);
+const v1_contract = new caver.klay.Contract(
+  V1_CONTRACT.abi,
+  V1_CONTRACT.address
+);
 
-let userCountMint = 0;
-let userCountMain = 0;
+const story_contract = new caver.klay.Contract(
+  STORY_CONTRACT.abi,
+  STORY_CONTRACT.address
+);
 
 //hide backend engine
 app.disable("x-powered-by");
@@ -43,7 +49,6 @@ app.use(
   })
 );
 
-//테스트 서버 포트
 const port = process.env.PORT || 8080;
 
 //동적 폴더(CSS,JS 로딩 용이)
@@ -54,7 +59,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/meatadata/:id", async (req, res) => {
-  let maxTokenId = await checkTokenId();
+  let maxTokenId = await checkV1TokenId();
   let id = req.params.id;
   if (id > parseInt(maxTokenId) + 1) {
     res.send(
@@ -62,7 +67,20 @@ app.get("/meatadata/:id", async (req, res) => {
         "<div>non-existent token ID</div>"
     );
   } else {
-    res.sendFile(__dirname + "/json/" + id + ".json");
+    res.sendFile(__dirname + "/json/v1_json/" + id + ".json");
+  }
+});
+
+app.get("/storycard/:id", async (req, res) => {
+  let maxTokenId = await checkStoryTokenId();
+  let id = req.params.id;
+  if (id > parseInt(maxTokenId)) {
+    res.send(
+      "<script>alert('발행되지않은 토큰입니다');</script>\n" +
+        "<div>non-existent token ID</div>"
+    );
+  } else {
+    res.sendFile(__dirname + "/json/story_json" + id + ".json");
   }
 });
 
@@ -70,11 +88,11 @@ app.get("/", (req, res) => {
   userCountMain++;
   res.render("index.html");
 });
-
+/*
 app.get("/testwgmint", (req, res) => {
   res.render("WG_MINT.html");
 });
-
+*/
 app.get("/storyairdrop", async (req, res) => {
   res.render("WG_STORY.html");
 });
@@ -83,8 +101,15 @@ app.get("/not-support-this-browser", (req, res) => {
   res.sendFile(__dirname + "/public/not-support-this-browser.html");
 });
 
-app.post("/getContract", (req, res) => {
-  res.send({ postAbi: CONTRACT.abi, postContract: CONTRACT.address });
+app.post("/getV1Contract", (req, res) => {
+  res.send({ postAbi: V1_CONTRACT.abi, postContract: V1_CONTRACT.address });
+});
+
+app.post("/getStoryContract", (req, res) => {
+  res.send({
+    postAbi: STORY_CONTRACT.abi,
+    postContract: STORY_CONTRACT.address,
+  });
 });
 
 //라우터에서 설정되어 있지 않은 주소로 접속하
@@ -104,9 +129,25 @@ app.listen(port, (err) => {
 //----------------------Function part--------------------------------//
 //-------------------------------------------------------------------//
 
-async function checkTokenId() {
+async function checkV1TokenId() {
   var data;
-  await contract.methods
+  await v1_contract.methods
+    .totalSupply()
+    .call()
+    .then(async function (result) {
+      console.log(result);
+      console.log(typeof result);
+      data = result;
+    })
+    .catch(function (error) {
+      console.log("조회 실패");
+      console.log(error);
+    });
+  return data;
+}
+async function checkStoryTokenId() {
+  var data;
+  await v1_contract.methods
     .totalSupply()
     .call()
     .then(async function (result) {
