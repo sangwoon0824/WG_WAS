@@ -135,8 +135,6 @@ async function checkV1TokenId() {
     .totalSupply()
     .call()
     .then(async function (result) {
-      console.log(result);
-      console.log(typeof result);
       data = result;
     })
     .catch(function (error) {
@@ -151,8 +149,6 @@ async function checkStoryTokenId() {
     .totalSupply()
     .call()
     .then(async function (result) {
-      console.log(result);
-      console.log(typeof result);
       data = result;
     })
     .catch(function (error) {
