@@ -80,7 +80,7 @@ app.get("/storycard/:id", async (req, res) => {
         "<div>non-existent token ID</div>"
     );
   } else {
-    res.sendFile(__dirname + "/json/story_json" + id + ".json");
+    res.sendFile(__dirname + "/json/story_json/" + id + ".json");
   }
 });
 
