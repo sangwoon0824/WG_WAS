@@ -145,7 +145,7 @@ async function checkV1TokenId() {
 }
 async function checkStoryTokenId() {
   var data;
-  await v1_contract.methods
+  await STORY_CONTRACT.methods
     .totalSupply()
     .call()
     .then(async function (result) {
